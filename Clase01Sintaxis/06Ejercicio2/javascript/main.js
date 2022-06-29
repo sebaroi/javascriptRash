@@ -20,9 +20,10 @@
 
 
 
-  let numero1 = Number(prompt("Ingrese un numero"))
-  let numero2 = Number(prompt("Ingrese otro numero"))
-  let suma = numero1+numero2
-  let mul = numero1*numero2
-  alert(`Multiplicación ${mul}`)
-  console.log(`Suma, ${suma}`)
+let numero1 = Number (prompt ("Ingrese el primer numero: "))
+let numero2 = Number (prompt ("Ingrese el segundo numero: "))
+let suma = numero1 + numero2
+let multi = numero1 * numero2
+alert(`La multiplicacion de los numeros ingresados es:  ${multi}`)
+//console.log ("La suma de los numeros ingresados es: ",suma)   Es lo mismo que el de abajo
+ console.log (`La suma de los numeros ingresados es: ${suma}`)

@@ -11,6 +11,6 @@
   const tercerNumero = 500;
   console.log("TERCER NUMERO", tercerNumero)
 
-  /* NO ES VALIDO 
+  /* NO ES VALIDO cuando es constante no se puede reemplzar el valor
   tercerNumero = 600;
   console.log("TERCER NUMERO", tercerNumero) */
