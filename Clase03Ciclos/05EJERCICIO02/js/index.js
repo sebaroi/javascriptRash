@@ -16,49 +16,62 @@
 */
 
 let numPaquetes = Number(prompt("Ingrese numero de paquetes"))
-let contador=0
+let contador=1
 let mayorPeso=0
-let menorPeso=0
-let numeroPaquete=0
-let i=0
+let menorPeso=1000000
+let numeroPaqueteMayor=0
+let numeroPaqueteMenor=0
+let pesoTotal=0
 
+/*
 do
 {
     let pesoPaquete = Number(prompt(`Ingrese el peso del paquete ${contador+1}`))
 
-    //console.log(pesoPaquete)
+    pesoTotal = pesoTotal + pesoPaquete
 
-   let pesoTotal = pesoTotal + pesoPaquete
+    contador++
 
-    i++;
-
-    if (mayorPeso < pesoPaquete)
+    if (mayorPeso < pesoPaquete) 
     {
         mayorPeso=pesoPaquete
-        numeroPaquete=i
+        numeroPaqueteMayor=contador
     }
-    else if (menorPeso >= pesoPaquete)
+    
+    if (menorPeso > pesoPaquete)
     {
         menorPeso=pesoPaquete
-        numeroPaquete=i
+        numeroPaqueteMenor=contador
+    }
+}
+while(contador < numPaquetes)
+let promedio = pesoTotal/numPaquetes
+console.log (`el mayor peso fue : ${mayorPeso} y fue el paquete nº ${numeroPaqueteMayor}
+.El menor peso fue ${menorPeso} y fue el paquete nº ${numeroPaqueteMenor}. El precio promedio es ${promedio}`)
+*/
+
+
+
+
+for (let i=0; i<numPaquetes; i++)
+{
+    let pesoPaquete = Number(prompt(`Ingrese el peso del paquete ${contador}`))
+
+    pesoTotal = pesoTotal + pesoPaquete
+
+    if (mayorPeso < pesoPaquete) 
+    {
+        mayorPeso=pesoPaquete
+        numeroPaqueteMayor=i+1
     }
 
+    if (menorPeso > pesoPaquete)
+    {
+        menorPeso=pesoPaquete
+        numeroPaqueteMenor=i+1
+    }
+    contador++
 }
-while(i < numPaquetes)
-
-console.log (`el mayor peso fue : ${mayorPeso} y fue el paquete nº ${i}
-.El menor peso fue ${menorPeso} y fue el paquete nº ${contador}. El precio promedio es ${pesoTotal/numPaquetes}`)
-
-
-
-
-
-
-/*
-    1. Pedirle al usuario el número de paquetes.
-    2. Hasta que el usuario NO haya ingresado el peso de 
-        TODOS LOS PAQUETES: 
-        Pedirle al usuario, el peso de los paquetes
-    3. Calcular mayor, menor y promedio
-*/
-51
+let promedio = pesoTotal/numPaquetes
+console.log (`El mayor peso fue : ${mayorPeso} y fue el paquete nº ${numeroPaqueteMayor}.
+.El menor peso fue ${menorPeso} y fue el paquete nº ${numeroPaqueteMenor}. El precio promedio es ${promedio}`)
