@@ -42,16 +42,14 @@ function eleccion()
     {
         case `MOTHER`:
             {
-                valorProducto()
-            //alert (`El valor del ${producto} es $ ${precioMother} `)
-            //precioEscrito = Number (prompt (`Ingrese el monto del producto: `))
+            valorProducto(producto, precioMother)
             while (precioEscrito < precioMother)
             {
                 precioEscrito = validar (precioEscrito, precioMother) 
             }
             if (precioEscrito > precioMother ) 
             {
-                alert (`Su vuelto es ${precioEscrito - precioMother}`) 
+                alert (`Su vuelto es $ ${precioEscrito - precioMother}`) 
             }
                 alert(`"Gracias por su compra"`)
                 elegir()
@@ -61,15 +59,14 @@ function eleccion()
         
         case `TECLADO`:
             {
-            alert (`El valor del ${producto} es $ ${precioTeclado} `)
-            precioEscrito = Number (prompt (`Ingrese el monto del producto: `))
+            valorProducto(producto, precioTeclado)
             while (precioEscrito < precioTeclado)
             {
                 precioEscrito = validar (precioEscrito, precioTeclado) 
             }
             if (precioEscrito > precioTeclado ) 
             {
-                alert (`Su vuelto es ${precioEscrito - precioTeclado}`) 
+                alert (`Su vuelto es $ ${precioEscrito - precioTeclado}`) 
             }
                 alert(`"Gracias por su compra"`)
                 elegir()
@@ -79,15 +76,14 @@ function eleccion()
         
         case `MOUSE`:
             {
-            alert (`El valor del ${producto} es $ ${precioMouse} `)
-            precioEscrito = Number (prompt (`Ingrese el monto del producto: `))
+            valorProducto(producto, precioMouse)    
             while (precioEscrito < precioMouse)
             {
                 precioEscrito = validar (precioEscrito, precioMouse) 
             }
             if (precioEscrito > precioMouse ) 
             {
-                alert (`Su vuelto es ${precioEscrito - precioMouse}`) 
+                alert (`Su vuelto es $ ${precioEscrito - precioMouse}`) 
             }
                 alert(`"Gracias por su compra"`)
                 elegir()
@@ -97,15 +93,14 @@ function eleccion()
         
         case `NOTEBOOK`:
             {
-            alert (`El valor del ${producto} es $ ${precioNotebook} `)
-            precioEscrito = Number (prompt (`Ingrese el monto del producto: `))
+            valorProducto(producto, precioNotebook)  
             while (precioEscrito < precioNotebook)
             {
                 precioEscrito = validar (precioEscrito, precioNotebook) 
             }
             if (precioEscrito > precioNotebook ) 
             {
-                alert (`Su vuelto es ${precioEscrito - precioNotebook}`) 
+                alert (`Su vuelto es $ ${precioEscrito - precioNotebook}`) 
             }
                 alert(`"Gracias por su compra"`)
                 elegir()
@@ -115,15 +110,14 @@ function eleccion()
         
         case `PC`:
             {
-            alert (`El valor del ${producto} es $ ${precioPc} `)
-            precioEscrito = Number (prompt (`Ingrese el monto del producto: `))
+            valorProducto(producto, precioPc)  
             while (precioEscrito < precioPc)
             {
                 precioEscrito = validar (precioEscrito, precioPc) 
             }
             if (precioEscrito > precioPc ) 
             {
-                alert (`Su vuelto es ${precioEscrito - precioPc}`) 
+                alert (`Su vuelto es $ ${precioEscrito - precioPc}`) 
             }
                 alert(`"Gracias por su compra"`)
                 elegir()
