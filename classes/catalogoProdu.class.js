@@ -10,21 +10,20 @@ class CatalogoProdu {
     }
 
     listarProdu(){
-        this.productos.forEach((producto,index) => {
-            console.log("Item",index + 1, producto);
+        this.productos.forEach((producto) => {
+            console.log("Item",producto);
     })
 }
 
-buscarProdu (produABuscar){
-    alert(produABuscar)
-    let produEncontrado = this.productos.some((produ) =>
-    produ.sku == produABuscar)
+buscarProdu (nombreABuscar){
+    let produEncontrado = this.productos.some((producto) =>
+    producto.sku.includes(nombreABuscar))
 
-    if (produEncontrado = true) {
-            
-        let filtro = this.productos.filter((produ) =>
-                produ.sku == produABuscar
-        )
+    if (produEncontrado == true) {
+        alert("El producto existe.")    
+        let filtro = this.productos.filter((producto) =>
+        producto.sku.includes(produABuscar))
+        
 
         console.table("Resultado del criterio de busqueda", filtro);
     }

@@ -7,6 +7,14 @@ const productos = [
 const catalogoProdu = new CatalogoProdu(productos)
 
 
+const categorias = ["placas de Video", "mother", "Notebooks", "monitores" ]
+
+ingProd()
+listarPro()
+modPro()
+busPro()
+fin()
+/*
 function inicio() {
     let opcion = ""
     while (opcion !== "S") {
@@ -43,8 +51,129 @@ function inicio() {
         }
     }
 }
+*/
 
-inicio()
+function ingProd()
+{
+    const btn = document.createElement("button")
+    btn.innerText="ALTA PRODUCTO";
+    btn.addEventListener("click", ()=>
+    {
+        cargarDatosProductos();
+    });
+    const adminNode = document.getElementById("Cargaprod")
+    adminNode.appendChild(btn);
+    
+}
+
+
+function listarPro()
+{
+    const btn = document.createElement("button")
+    btn.innerText="LISTAR";
+    btn.addEventListener("click", ()=>
+    {
+        listarProducto();
+    });
+    const adminNode = document.getElementById("Mostrar")
+    adminNode.appendChild(btn);  
+}
+
+function modPro()
+{
+    const btn = document.createElement("button")
+    btn.innerText="MODIFICAR";
+    btn.addEventListener("click", ()=>
+    {
+        modificar();
+    });
+    const adminNode = document.getElementById("Modificar")
+    adminNode.appendChild(btn);  
+}
+
+function busPro()
+{
+    const btn = document.createElement("button")
+    btn.innerText="BUSCAR";
+    btn.addEventListener("click", ()=>
+    {
+        let nombreABuscar = prompt ("Ingrese el id a buscar")
+        catalogoProdu.buscarProdu(nombreABuscar);
+    });
+    const adminNode = document.getElementById("Buscar")
+    adminNode.appendChild(btn);  
+}
+
+
+
+function fin()
+{
+    const btn = document.createElement("button")
+    btn.innerText="SALIR";
+    btn.addEventListener("click", ()=>
+    {
+        salir();
+    });
+    const adminNode = document.getElementById("Finalizar")
+    adminNode.appendChild(btn);  
+}
+
+function salir (){
+    alert("Saludos");
+
+}
+
+
+function mostrarCargarPregunta()
+{
+    const formulario = document.createElement("form"); 
+    const inputPregunta = document.createElement("input");
+    inputPregunta.setAttribute("id", "inputPregunta")
+    inputPregunta.addEventListener("keydown", (event)=>{
+            if(event.key==='k')
+            {
+                event.preventDefault();
+                alert("SU COMPUTADOR VA A EXPLOTAR");
+            }
+    })
+    formulario.appendChild(inputPregunta);
+    const submitBtn = document.createElement("input")
+    submitBtn.setAttribute("type", "submit");
+    submitBtn.addEventListener("click", (event)=>{
+        event.preventDefault();
+        if(inputPregunta.value==="")
+        {
+            alert("COMPLETE SU FORMULARIO")
+        }
+        else
+        {
+            alert("VAMOS A PROCEDER")
+            inputPregunta.value="";
+        }
+        
+    })
+    formulario.appendChild(submitBtn);
+    const nodo = document.getElementById("mainContent");
+    nodo.appendChild(formulario);
+
+}
+
+
+/*
+function SALIR()
+{
+    const btn = document.createElement("button")
+    btn.innerText="MODIFICAR";
+    btn.addEventListener("click", ()=>
+    {
+        modificar();
+    });
+    const adminNode = document.getElementById("Modificar")
+    adminNode.appendChild(btn);  
+}
+*/
+
+//inicio()
 
 
 let precioCompra = 0
@@ -126,9 +255,7 @@ function listarProducto() {
                                 <button class="button">COMPRAR</button>
                             </div>
                         </div>
-                 </div> `
-        
-        
+                    </div> `
         nodoPrincipal.appendChild(divProducto);
 
         //document.body.appendChild()a
@@ -140,10 +267,7 @@ function listarProducto() {
 
 
 
-function buscar () {
-    let busca = prompt ("Ingrese el Id del prodcuto a buscar: ")
-    catalogoProdu.buscarProdu(busca)
-    }
+
 
 
 let total = 0
