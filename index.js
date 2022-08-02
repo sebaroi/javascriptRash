@@ -2,6 +2,7 @@ const productos = [
     {sku: 1, categoria: "placas de video", nombreProdu: "Nvidia Asus Dual GeForce GTX 1650 OC Edition 4GB", precio: 80200, descripcion: "placa de video", stock: 4, imagen:"https://http2.mlstatic.com/D_NQ_NP_2X_770553-MLA44835817388_022021-F.webp" },
     {sku: 2, categoria: "Mothers", nombreProdu: "Asrock A68", precio: 5800, descripcion: "Mother para pc", stock: 7, imagen:"https://http2.mlstatic.com/D_NQ_NP_759323-MLA42590871149_072020-O.webp" },
     {sku: 3, categoria: "Mothers", nombreProdu: "Asus k56nb", precio: 1520, descripcion: "Mother para pc", stock: 4, imagen:"https://http2.mlstatic.com/D_NQ_NP_914646-MLA49335236971_032022-O.webp" },
+    {sku: 4, categoria: "Notebook", nombreProdu: "Notebook Asus E410MA 14 | Celeron N4020 | 4GB | SSD 128 GB", precio: 104.500, descripcion: "Notebook super elegante", stock: 4, imagen:"https://http2.mlstatic.com/D_NQ_NP_666672-MLA46217453580_052021-O.webp" },
 ]
 
 const catalogoProdu = new CatalogoProdu(productos)
@@ -14,44 +15,7 @@ listarPro()
 modPro()
 busPro()
 fin()
-/*
-function inicio() {
-    let opcion = ""
-    while (opcion !== "S") {
 
-        opcion = prompt(`Seleccione una opcion: 
-                        A. Ingresar Producto
-                        B. Listar Producto
-                        C. Modificar producto
-                        D. Buscar un prodcuto por ID
-                        E. Vender un producto
-                        S. SALIR`).toUpperCase();
-        switch (opcion) {
-            case "A":
-                cargarDatosProductos();
-                break;
-            case "B":
-                listarProducto();
-                break;
-            case "C":
-                modificar();
-                break;
-            case "D":
-                buscar ();
-                break;
-            case "E":
-                vender ();
-                break;
-            case "S":
-                alert("Saludos");
-                break;
-            default:
-                alert("Opcion Inválida")
-                break;
-        }
-    }
-}
-*/
 
 function ingProd()
 {
@@ -64,7 +28,6 @@ function ingProd()
     });
     const adminNode = document.getElementById("Cargaprod")
     adminNode.appendChild(btn);
-    
 }
 
 
@@ -164,22 +127,6 @@ function mostrarCargarPregunta()
 }
 
 
-/*
-function SALIR()
-{
-    const btn = document.createElement("button")
-    btn.innerText="MODIFICAR";
-    btn.addEventListener("click", ()=>
-    {
-        modificar();
-    });
-    const adminNode = document.getElementById("Modificar")
-    adminNode.appendChild(btn);  
-}
-*/
-
-//inicio()
-
 
 let precioCompra = 0
 
@@ -190,25 +137,6 @@ function vender (){
 
 
 
-
-/*
-function cobrar (monto) {
-    alert (`El total a abonar es de ${monto}`)
-    let recibo = Number(prompt(`Ingrese el dinero que desea abonar`))
-    if (recibo>monto || recibo==monto){
-        alert(`Su vuelto es $ ${recibo-monto}`)
-    }
-    else if (recibo<monto){
-        alert(`El dinero recibido es inferior al valor de la compra, restan $ ${monto-recibo}`)
-        while (recibo<monto){
-            let pedir = Number(prompt(`Ingrese el dinero restante`))
-            recibo = recibo + pedir
-            alert(`Restan $ ${monto-recibo}`)
-        }
-        alert(`Su vuelto es $ ${recibo-monto}`)
-    }
-}
-*/
 
 function cargarDatosProductos()
 {
@@ -272,15 +200,22 @@ function listarProducto() {
 
 
 
-
-
-
-let total = 0
-let posicion = 0 
-let estas
-let sel = 0 
-
-
-
-
+/*
+function cobrar (monto) {
+    alert (`El total a abonar es de ${monto}`)
+    let recibo = Number(prompt(`Ingrese el dinero que desea abonar`))
+    if (recibo>monto || recibo==monto){
+        alert(`Su vuelto es $ ${recibo-monto}`)
+    }
+    else if (recibo<monto){
+        alert(`El dinero recibido es inferior al valor de la compra, restan $ ${monto-recibo}`)
+        while (recibo<monto){
+            let pedir = Number(prompt(`Ingrese el dinero restante`))
+            recibo = recibo + pedir
+            alert(`Restan $ ${monto-recibo}`)
+        }
+        alert(`Su vuelto es $ ${recibo-monto}`)
+    }
+}
+*/
 
