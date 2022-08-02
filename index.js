@@ -56,7 +56,8 @@ function inicio() {
 function ingProd()
 {
     const btn = document.createElement("button")
-    btn.innerText="ALTA PRODUCTO";
+    btn.innerText="ALTA PRODUCTO"
+    btn.classList.add("button")
     btn.addEventListener("click", ()=>
     {
         cargarDatosProductos();
@@ -70,7 +71,8 @@ function ingProd()
 function listarPro()
 {
     const btn = document.createElement("button")
-    btn.innerText="LISTAR";
+    btn.innerText="LISTAR"
+    btn.classList.add("button")
     btn.addEventListener("click", ()=>
     {
         listarProducto();
@@ -82,7 +84,8 @@ function listarPro()
 function modPro()
 {
     const btn = document.createElement("button")
-    btn.innerText="MODIFICAR";
+    btn.innerText="MODIFICAR"
+    btn.classList.add("button")
     btn.addEventListener("click", ()=>
     {
         modificar();
@@ -94,7 +97,8 @@ function modPro()
 function busPro()
 {
     const btn = document.createElement("button")
-    btn.innerText="BUSCAR";
+    btn.innerText="BUSCAR"
+    btn.classList.add("button")
     btn.addEventListener("click", ()=>
     {
         let nombreABuscar = prompt ("Ingrese el id a buscar")
@@ -109,7 +113,8 @@ function busPro()
 function fin()
 {
     const btn = document.createElement("button")
-    btn.innerText="SALIR";
+    btn.innerText="SALIR"
+    btn.classList.add("button")
     btn.addEventListener("click", ()=>
     {
         salir();

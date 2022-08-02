@@ -17,14 +17,12 @@ class CatalogoProdu {
 
 buscarProdu (nombreABuscar){
     let produEncontrado = this.productos.some((producto) =>
-    producto.sku.includes(nombreABuscar))
+    producto.sku==(nombreABuscar))
 
     if (produEncontrado == true) {
         alert("El producto existe.")    
         let filtro = this.productos.filter((producto) =>
-        producto.sku.includes(produABuscar))
-        
-
+        producto.sku==(nombreABuscar))
         console.table("Resultado del criterio de busqueda", filtro);
     }
     else {
@@ -59,7 +57,7 @@ else{
 modificarProdu(produABuscar, id, categoria, nombreProdu, precio, descripcion, stock, imagen)
 {
     let busca = this.productos.find((producto) =>
-        producto.sku.includes(produABuscar))
+        producto.sku==(produABuscar))
     
     if(busca)
     {

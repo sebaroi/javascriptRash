@@ -111,3 +111,182 @@ text-align: left; }
         font-family: Roboto;
         width: 100%; }
     
+        .colorBodys {
+            color: #F5F5F5; }
+          
+          .lineaFooters {
+            color: #b78c33; }
+           
+
+            footer.nb-footer {
+                background: #39393a;
+                border-top: 4px solid #b78c33;
+                text-align: center; }
+              
+              .footer-info-single img {
+                margin-left: 5px; }
+              
+              .footer-info-single ul li {
+                text-decoration: none;
+                list-style: none;
+                text-align: center; }
+              
+              .footer.nb-footer .footer-info-single {
+                margin-top: 5px; }
+              
+              footer.nb-footer .footer-info-single .title {
+                color: white;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 16px;
+                padding-left: 5px; }
+              
+              footer.nb-footer .footer-info-single ul li a {
+                display: block;
+                color: white;
+                font-weight: bold;
+                padding: 2px 0;
+                text-decoration: none;
+                list-style: none; }
+              
+              footer.nb-footer .footer-info-single ul li p {
+                display: block;
+                color: white;
+                font-weight: bold;
+                padding: 2px 0; }
+              
+              footer.nb-footer .footer-info-single ul li a:hover {
+                color: #b78c33; }
+              
+              footer.nb-footer .d-flex {
+                text-align: center; }
+              
+              .textoFooter {
+                text-align: center; }
+              
+              .ContenedorRedesSociales {
+                width: 100%;
+                height: 1rem; }
+              
+              /* link redes sociales en el footer */
+              .redesSociales img {
+                margin-top: 0px;
+                padding-left: auto;
+                height: 30px;
+                width: 30px; }
+              
+              .contenedorLogo {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 20px; }
+              
+              .margenFooter {
+                margin-bottom: 70px;
+                background-color: #39393a; }
+              
+
+
+
+
+                /* MEDIA QUERIES */
+@media screen and (max-width: 576px) {
+    .marcoProducto {
+      height: fit-content; } }
+  
+  @media screen and (max-width: 1100px) {
+    .form-outline {
+      display: none; }
+    .input-group {
+      display: none; } }
+  
+  header {
+    z-index: 3;
+    height: 100px;
+    position: sticky;
+    top: 0; }
+  
+  .container-fluid {
+    background-color: #39393a; }
+    .container-fluid .rash {
+      width: 60px;
+      margin: 20px; }
+    .container-fluid .input-group {
+      align-items: flex-end;
+      width: auto; }
+    .container-fluid .navbar-light .navbar-nav .nav-link {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center; }
+    .container-fluid .nav-link {
+      color: white !important;
+      font-size: 1.3rem; }
+  
+  .d-flex {
+    text-align: center;
+    margin-top: 0%; }
+  
+  .navbar {
+    background-color: #39393a; }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto"; }
+  
+  body {
+    background-color: #F5F5F5; }
+  
+  h2, h1 {
+    font-family: roboto;
+    font-weight: bold; }
+  
+  .imagenesCentrales {
+    text-align: center;
+    background-color: #39393a; }
+  
+  /* Boton de whatssap */
+  .botonWhatsApp img {
+    width: 60px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px; }
+  
+  .row {
+    text-align: center;
+    font-family: Roboto;
+    width: 100%; }
+  
+  .container1 p {
+    color: white; }
+  
+  .articulos {
+    display: block;
+    margin: auto; }
+  
+  .secciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start; }
+  
+  .marca-main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 23%;
+    max-width: 150px; }
+    .marca-main div:hover {
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: 5px 5px 20px black;
+      transform: translateY(-3%); }
+    .marca-main img {
+      width: 100%;
+      border-radius: 50%;
+      background-color: white;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      object-fit: contain; }
+  
+  .caracteristicas ul {
+    list-style-type: none; }
