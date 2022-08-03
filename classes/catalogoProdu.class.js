@@ -31,28 +31,6 @@ buscarProdu (nombreABuscar){
 }
 
 
-comprarProducto(id){
-    let precioCompra = 0
-    let total =0
-    let buscarP = this.productos.find((producto) =>
-    producto.sku.includes(id))
-if(buscarP)
-{
-    cantidad =prompt("Cuantos productos desea comprar: ")
-        if (cantidad <= buscarP.stock){
-            alert(buscarP.precio)
-            buscarP.stock = buscarP.stock - cantidad
-            precioCompra = buscarP.precio * cantidad
-            total = precioCompra + total
-            alert ("el monto a abonar es " + total, "Quedan en stock " + buscarP.stock )
-}
-else{
-    alert("El producto no existe")
-} 
-}
-}
-
-
 
 modificarProdu(produABuscar, id, categoria, nombreProdu, precio, descripcion, stock, imagen)
 {
@@ -75,3 +53,30 @@ modificarProdu(produABuscar, id, categoria, nombreProdu, precio, descripcion, st
 }
 
 }
+
+
+
+/*
+comprarProducto(id){
+    let precioCompra = 0
+    let total =0
+    let buscarP = this.productos.find((producto) =>
+    producto.sku.includes(id))
+if(buscarP)
+{
+    cantidad =prompt("Cuantos productos desea comprar: ")
+        if (cantidad <= buscarP.stock){
+            alert(buscarP.precio)
+            buscarP.stock = buscarP.stock - cantidad
+            precioCompra = buscarP.precio * cantidad
+            total = precioCompra + total
+            alert ("el monto a abonar es " + total, "Quedan en stock " + buscarP.stock )
+}
+else{
+    alert("El producto no existe")
+} 
+}
+}
+
+*/
+

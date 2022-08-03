@@ -92,51 +92,6 @@ function salir (){
 }
 
 
-function mostrarCargarPregunta()
-{
-    const formulario = document.createElement("form"); 
-    const inputPregunta = document.createElement("input");
-    inputPregunta.setAttribute("id", "inputPregunta")
-    inputPregunta.addEventListener("keydown", (event)=>{
-            if(event.key==='k')
-            {
-                event.preventDefault();
-                alert("SU COMPUTADOR VA A EXPLOTAR");
-            }
-    })
-    formulario.appendChild(inputPregunta);
-    const submitBtn = document.createElement("input")
-    submitBtn.setAttribute("type", "submit");
-    submitBtn.addEventListener("click", (event)=>{
-        event.preventDefault();
-        if(inputPregunta.value==="")
-        {
-            alert("COMPLETE SU FORMULARIO")
-        }
-        else
-        {
-            alert("VAMOS A PROCEDER")
-            inputPregunta.value="";
-        }
-        
-    })
-    formulario.appendChild(submitBtn);
-    const nodo = document.getElementById("mainContent");
-    nodo.appendChild(formulario);
-
-}
-
-
-
-let precioCompra = 0
-
-function vender (){
-    venta = prompt(`Ingrese el ID del producto: `)
-    catalogoProdu.comprarProducto(venta)
-    }
-
-
-
 
 function cargarDatosProductos()
 {
@@ -163,7 +118,6 @@ function modificar () {
     imag = prompt("Ingrese la imagen: ");
     catalogoProdu.modificarProdu(idmodificar, cate, nombre, valor, descri, cantidad, imag)
     }
-
 
 
 
@@ -194,9 +148,6 @@ function listarProducto() {
         //document.body.appendChild()a
     })
 }
-
-
-
 
 
 
