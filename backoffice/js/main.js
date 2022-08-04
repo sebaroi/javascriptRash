@@ -10,12 +10,24 @@ const catalogoProdu = new CatalogoProdu(productos)
 
 const categorias = ["placas de Video", "mother", "Notebooks", "monitores" ]
 
+
 ingProd()
+
+
 listarPro()
 modPro()
 busPro()
 fin()
 
+
+
+function botonCargaProductos(){
+    const btn = document.getElementById("botonCrearProd")
+    btn.addEventListener("click", ()=>{
+        cargarDatosProductos()
+        alert("producto ingresado")
+    })
+}
 
 function ingProd()
 {
@@ -24,10 +36,38 @@ function ingProd()
     btn.classList.add("button")
     btn.addEventListener("click", ()=>
     {
-        cargarDatosProductos();
+        window.location.href="../backoffice/altaProducto.html"
+     //   cargarDatosProductos();
     });
-    const adminNode = document.getElementById("Cargaprod")
-    adminNode.appendChild(btn);
+ const adminNode = document.getElementById("CargaProd")
+ adminNode.appendChild(btn); //cuando oculeto me muestro los otros botones
+}
+
+
+
+
+function cargarDatosProductos()
+{
+    const id = document.getElementById("id").value;
+    alert(id)
+    const cate = document.getElementById("cate").value;
+    const nombre = document.getElementById("nombre").value;
+    const valor = document.getElementById("valor").value;
+    const descri = document.getElementById("descri").value;
+    const cantidad = document.getElementById("cantidad").value;
+    const imag = document.getElementById("imag").value;
+    let nuevo = new Producto (id, cate, nombre, valor, descri, cantidad, imag)
+    catalogoProdu.agregarProd(nuevo)//tiene que ser en el array y no en el constructor
+    alert("Producto ingresado")
+/*
+    id = prompt("Ingrese el ID: ");
+    cate = prompt("Ingrese la categoria: ");
+    nombre = prompt("Ingrese el producto: ");
+    valor =  prompt("Ingrese Precio: ");
+    descri = prompt("Ingrese la Descripción: ");
+    cantidad = prompt("Ingrese la cantidad en stock: ");
+    imag = prompt("Ingrese la imagen: ");*/
+
 }
 
 
@@ -93,19 +133,6 @@ function salir (){
 
 
 
-function cargarDatosProductos()
-{
-    id = prompt("Ingrese el ID: ");
-    cate = prompt("Ingrese la categoria: ");
-    nombre = prompt("Ingrese el producto: ");
-    valor =  prompt("Ingrese Precio: ");
-    descri = prompt("Ingrese la Descripción: ");
-    cantidad = prompt("Ingrese la cantidad en stock: ");
-    imag = prompt("Ingrese la imagen: ");
-    let nuevo = new Producto (id, cate, nombre, valor, descri, cantidad, imag)
-    catalogoProdu.agregarProd(nuevo)//tiene que ser en el array y no en el constructor
-}
-
 
 
 function modificar () {
@@ -170,3 +197,34 @@ function cobrar (monto) {
 }
 */
 
+/*
+//-------------------login---------
+botonLogin ()
+
+function botonLogin(){
+    const btn = document.getElementById("btnLogin")
+    btn.addEventListener("click", ()=>{
+        procesoLogin()
+    })
+}
+
+function procesoLogin(){
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    if (username ==="" || password===""){
+        alert("Ingrese los datos correctamente")
+    } else if (username ==="admin" && password ==="admin"){
+        mostrarBackoffice()
+
+    }else {
+        alert("nombre de usuario o password incorrecto")
+    }
+}
+
+
+function mostrarBackoffice(){
+    window.location.href="../backoffice/index.html"
+}
+//-------
+
+*/
