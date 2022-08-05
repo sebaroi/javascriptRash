@@ -12,22 +12,18 @@ const categorias = ["placas de Video", "mother", "Notebooks", "monitores" ]
 
 
 ingProd()
-
-
 listarPro()
 modPro()
 busPro()
 fin()
 
 
-
-function botonCargaProductos(){
     const btn = document.getElementById("botonCrearProd")
-    btn.addEventListener("click", ()=>{
-        cargarDatosProductos()
+    btn.addEventListener("click", (e)=>{
+        cargarDatosProductos(e)
         alert("producto ingresado")
     })
-}
+
 
 function ingProd()
 {
@@ -46,8 +42,9 @@ function ingProd()
 
 
 
-function cargarDatosProductos()
+function cargarDatosProductos(e)
 {
+    e.preventDefault()
     const id = document.getElementById("id").value;
     alert(id)
     const cate = document.getElementById("cate").value;
@@ -55,10 +52,11 @@ function cargarDatosProductos()
     const valor = document.getElementById("valor").value;
     const descri = document.getElementById("descri").value;
     const cantidad = document.getElementById("cantidad").value;
-    const imag = document.getElementById("imag").value;
+    const imag = document.getElementById("imagen").value;
     let nuevo = new Producto (id, cate, nombre, valor, descri, cantidad, imag)
     catalogoProdu.agregarProd(nuevo)//tiene que ser en el array y no en el constructor
     alert("Producto ingresado")
+    console.log(productos);
 /*
     id = prompt("Ingrese el ID: ");
     cate = prompt("Ingrese la categoria: ");
@@ -136,13 +134,21 @@ function salir (){
 
 
 function modificar () {
-    idmodificar = prompt ("Ingrese el id del prodcuto: ")
+    window.location.href="../backoffice/modificarProducto.html"
+    const cate = document.getElementById("cate").value;
+    const nombre = document.getElementById("nombre").value;
+    const valor = document.getElementById("valor").value;
+    const descri = document.getElementById("descri").value;
+    const cantidad = document.getElementById("cantidad").value;
+    const imag = document.getElementById("imagen").value;
+/*
+    idModificar = prompt ("Ingrese el id del producto: ")
     cate = prompt("Ingrese la categoria: ");
     nombre = prompt("Ingrese el producto: ");
     valor =  prompt("Ingrese Precio: ");
     descri = prompt("Ingrese la Descripción: ");
     cantidad = prompt("Ingrese la cantidad en stock: ");
-    imag = prompt("Ingrese la imagen: ");
+    imag = prompt("Ingrese la imagen: ");*/
     catalogoProdu.modificarProdu(idmodificar, cate, nombre, valor, descri, cantidad, imag)
     }
 
