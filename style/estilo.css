@@ -99,6 +99,25 @@ text-align: left; }
       box-shadow: 0 4px 16px #318aac;
       transition: all 0.2s ease; }
   
+/*
+  #botonAgregar {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0.5em 1.2em;
+    background: #318aac;
+    border: 2px solid;
+    border-color: #318aac;
+    position: relative;
+    font-weight: bold;
+    border-radius: 15px;
+    margin-bottom: 1rem; }
+    .button:hover {
+      box-shadow: 0 4px 16px #318aac;
+      transition: all 0.2s ease; }
+
+*/
+
   .compraCarrrito {
     text-align: right; }
   
@@ -446,4 +465,11 @@ p {
 }
 .boton-agregar:focus {
   outline: none;
+}
+
+
+.imagenModal{
+ 
+height: 40%;
+width: 40%; 
 }

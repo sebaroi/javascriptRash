@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="../classes/catalogoProdu.class.js"></script>
     <script defer src="../classes/produ.class.js"></script>
-    <script defer src="../backoffice/js/main.js"></script>
+    <script defer src="../backoffice/main.js"></script>
     <script defer src="../backoffice/modal.js"></script>
     <!-- JavaScript Bundle with Popper -->
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
@@ -26,12 +26,14 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+                <div class="botonComprar">
+                    <button id="botonProd" class="button" class="precioProducto">Cargar producto</button>
+                </div>
                     <div id="CargaProd"></div>
                     <div id="Mostrar"></div>
                     <div id="Modificar"></div>
-                    <div id="Buscar"></div>
-                    <button id="botonCarrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito"></span>  </button>
+                    <div id="Buscar"></div>                   
+                    <button id="botonCarrito"><i class="fas fa-shopping-cart"></i><p id="contadorCarrito"></p></button>
             </div>
         </nav>
     </header>
@@ -50,6 +52,7 @@
         <div id="carritoContenedor">
 
         </div>
+
         <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
         <button id="vaciarCarrito" class="boton-agregar">Vaciar carrito</button>
     </div>

@@ -5,6 +5,7 @@ const modalCarrito = document.getElementsByClassName('modal-carrito')[0]
 
 
 botonAbrir.addEventListener('click', ()=>{
+    actualizarCarrito()
     contenedorModal.classList.toggle('modal-active')
 })
 botonCerrar.addEventListener('click', ()=>{

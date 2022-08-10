@@ -4,8 +4,9 @@ class CatalogoProdu {
         this.productos = productos
     }
 
-    agregarProd(productos){
-        this.productos.push(productos)
+    
+    agregarProd(producto){
+        this.productos.push(producto)
         alert("Producto ingresado con Éxito")
     }
 
