@@ -2,38 +2,21 @@ const botonAgregar = document.getElementById('botonAgregar')
 
 botonAgregar.addEventListener('click', (e) => {
     cargarDatosProductos(e) // tenia la e
+    guardar()
     alert("producto ingresado")
     })
 
-
-    /*
-const botonPrin = document.getElementById('botonPrin')
-botonPrin.addEventListener('click', () => {
-    window.location.href="../../backoffice/js/index.html"
-    })
-
-*/
-
-/*
-function ingProd()
-{
-    const btn = document.createElement("button")
-    btn.innerText="ALTA PRODUCTO"
-    btn.classList.add("button")
-    btn.addEventListener("click", ()=>
-    {
-        window.location.href="../backoffice/altaProducto.html"
-     //   cargarDatosProductos();
-    });
- const adminNode = document.getElementById("CargaProd")
- adminNode.appendChild(btn); //cuando oculeto me muestro los otros botones
+const guardar =()=> {
+        guardar("prodcutos", JSON.stringify(producto))
 }
-*/
+        /*
+        for (const producto of prodcutos){
+            guardar(producto, JSON.stringify(producto))
+        }
+    }*/
 
-function cargarDatosProductos(e) // si saco la variable e 
+function cargarDatosProductos(e) 
 {
-    //preventDefault() //.e.preventDefault()
-    // alert("inicio")
     e.preventDefault()
     const id = document.getElementById("id").value;
     const cate = document.getElementById("cate").value;
@@ -43,23 +26,12 @@ function cargarDatosProductos(e) // si saco la variable e
     const cantidad = document.getElementById("cantidad").value;
     const imag = document.getElementById("imagen").value;
     let nuevo = new Producto (id, cate, nombre, valor, descri, cantidad, imag)
-    // alert(nuevo)
     productos.push(nuevo)
     //tiene que ser en el array y no en el constructor
-
-    // alert("Producto ingresado")
     console.log(productos);
 
 }
 
-/*
-    const btn = document.getElementById("botonAgregar")
-    btn.addEventListener("click", () =>{
-        cargarDatosProductos()
-        alert("producto ingresado")
-    })
-
-*/
 
 
 /*
@@ -108,10 +80,6 @@ function busPro()
 
 
 
-
-
-
-
 function modificar () {
     window.location.href="../backoffice/modificarProducto.html"
     const cate = document.getElementById("cate").value;
@@ -120,28 +88,8 @@ function modificar () {
     const descri = document.getElementById("descri").value;
     const cantidad = document.getElementById("cantidad").value;
     const imag = document.getElementById("imagen").value;
-/*
-    idModificar = prompt ("Ingrese el id del producto: ")
-    cate = prompt("Ingrese la categoria: ");
-    nombre = prompt("Ingrese el producto: ");
-    valor =  prompt("Ingrese Precio: ");
-    descri = prompt("Ingrese la Descripción: ");
-    cantidad = prompt("Ingrese la cantidad en stock: ");
-    imag = prompt("Ingrese la imagen: ");*/
     catalogoProdu.modificarProdu(idmodificar, cate, nombre, valor, descri, cantidad, imag)
     }
-
-
-
-    
-    
- 
-
-
-
-
-
-
 
 
 
@@ -179,25 +127,5 @@ function listarProducto() {
     })
 }
 
-*/
-
-
-/*
-function cobrar (monto) {
-    alert (`El total a abonar es de ${monto}`)
-    let recibo = Number(prompt(`Ingrese el dinero que desea abonar`))
-    if (recibo>monto || recibo==monto){
-        alert(`Su vuelto es $ ${recibo-monto}`)
-    }
-    else if (recibo<monto){
-        alert(`El dinero recibido es inferior al valor de la compra, restan $ ${monto-recibo}`)
-        while (recibo<monto){
-            let pedir = Number(prompt(`Ingrese el dinero restante`))
-            recibo = recibo + pedir
-            alert(`Restan $ ${monto-recibo}`)
-        }
-        alert(`Su vuelto es $ ${recibo-monto}`)
-    }
-}
 */
 

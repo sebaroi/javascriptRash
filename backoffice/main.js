@@ -12,17 +12,8 @@ const productos = [
 const catalogoProdu = new CatalogoProdu(productos)
 
 
+
 const categorias = ["placas de Video", "mother", "Notebooks", "monitores" ]
-
-
-//listarProducto()
-//listarPro()   para listar los prodcutos cuanto entro con admin adminn
-//ingProd()
-
-//modPro()
-//busPro()
-
-
 
 
 
@@ -46,9 +37,23 @@ botonProd.addEventListener("click", ()=>{
     window.location.href="../backoffice/alta-producto/altaproducto.html"
 })
 
-
+/*
+if (entradaCarrito === 0) {
+    
+}
+*/
 let carrito = []
 
+/*incializar()
+
+function incializar(){
+    do {
+        vacio = false
+        localStorage.setItem("carrito", "")
+    }
+    while (localStorage.setItem("carrito") ==true)
+}
+*/
 
 let contCarrito = 0
 function numerarProductos(){
@@ -62,14 +67,14 @@ function numerarProductosAlBorrar(){
     document.getElementById('contadorCarrito').innerHTML = contCarrito
 }
 
-/*
+
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('carrito')){
         carrito = JSON.parse(localStorage.getItem('carrito'))
         actualizarCarrito()
     }
 })
-*/
+
 
 
 botonVaciar.addEventListener('click', () => {
@@ -164,9 +169,3 @@ const eliminarDelCarrito = (prodId) => {
 
 }
 
-//        <p>cantidad: <span id="cantidad">${producto.stock}</span> </p>
-   //   <div class="imagenModal"> <img src="${producto.imagen}" alt="ImgProd" ></div>
-
-
-
-   
