@@ -2,11 +2,10 @@ const botonAgregar = document.getElementById('botonAgregar')
 
 botonAgregar.addEventListener('click', (e) => {
     cargarDatosProductos(e) // tenia la e
-    guardar()
     alert("producto ingresado")
     })
 
-const guardar =()=> {
+/*const guardar =()=> {
         guardar("prodcutos", JSON.stringify(producto))
 }
         /*
@@ -14,6 +13,16 @@ const guardar =()=> {
             guardar(producto, JSON.stringify(producto))
         }
     }*/
+
+
+   document.addEventListener('DOMContentLoaded', () => {
+       // if (localStorage.getItem('productos')){
+           // catalogo = JSON.parse(localStorage.getItem('productos'))
+         //   listarProducto() 
+    //    }
+    })
+    
+
 
 function cargarDatosProductos(e) 
 {
@@ -26,10 +35,16 @@ function cargarDatosProductos(e)
     const cantidad = document.getElementById("cantidad").value;
     const imag = document.getElementById("imagen").value;
     let nuevo = new Producto (id, cate, nombre, valor, descri, cantidad, imag)
-    productos.push(nuevo)
-    //tiene que ser en el array y no en el constructor
-    console.log(productos);
 
+    let vdsdal= JSON.parse(localStorage.getItem('productos'));
+    vdsdal.push(nuevo)
+    localStorage.setItem('productos',  JSON.stringify( vdsdal))
+
+    window.location.href="../../backoffice/index.html"
+    
+
+
+    //tiene que ser en el array y no en el constructor
 }
 
 
@@ -93,39 +108,5 @@ function modificar () {
 
 
 
-/*
-function listarProducto() {
 
-    const nodoPrincipal = document.getElementById("contenedorProductos")
-    nodoPrincipal.innerHTML="";
-    catalogoProdu.productos.forEach((producto)=>{
-
-        const divProducto = document.createElement("div")
-        divProducto.className=" col-lg-3 col-md-4 col-sm-6 "
-        divProducto.innerHTML=`
-                    <div class="marcoProducto">
-                        <div class="imagenProducto">
-                            <img src=${producto.imagen}>
-                        </div>
-                        <div class="textoProducto">
-                            <p>${producto.nombreProdu}</p>
-                            <p>$${producto.precio}</p>
-                            <hr>
-                            <div class="botonComprar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <button id="agregar${producto.sku}" class="button" <i class="fas fa-shopping-cart"></i>COMPRAR</button><i class="fas fa-shopping-cart"></i>
-                            </div>
-                        </div>
-                    </div> `
-        nodoPrincipal.appendChild(divProducto);
-        //document.body.appendChild()
-        let element= `agregar${producto.sku}`
-
-        const botonAgregar = document.getElementById(element)
-        botonAgregar.addEventListener('click', () => {
-        agregarAlCarrito(producto.sku)
-        })
-    })
-}
-
-*/
 
