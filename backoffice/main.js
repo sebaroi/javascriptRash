@@ -43,12 +43,18 @@ function numerarProductosAlBorrar(){
 }
 */
 
+/*
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('carrito')){
         carrito = JSON.parse(localStorage.getItem('carrito'))
     //    actualizarCarrito()
     }
 })
+*/
+
+if(localStorage.getItem('carrito') == null || localStorage.getItem('carrito') == 'null')
+localStorage.setItem('carrito',  JSON.stringify(carrito))
+const carrLocalStorage=  JSON.parse(localStorage.getItem('carrito'));
 
 
 
@@ -115,17 +121,24 @@ function agregarAlCarrito (prodId)  {
         })
     } else {    
   //  numerarProductos()      */
-    const item = productos.find((producto) => producto.sku === prodId)
-    carrito.push(item)
+
+ // let item= JSON.parse(localStorage.getItem('carrito'));
+ // item.push(nuevo)
+ carrLocalStorage
+  localStorage.setItem('carrito',  JSON.stringify(item))
+
+    //    const item = productos.find((producto) => producto.sku === prodId)
+    //    carrito.push(item)
+     //   carrito = JSON.parse(localStorage.getItem('carrito'))
 
 }
 
 
 
-localStorage.setItem('carrito', JSON.stringify(carrito))
+//localStorage.setItem('carrito', JSON.stringify(carrito))
 //actualizarCarrito()
 
-const carrLocalStorage=  JSON.parse(localStorage.getItem('productos'));
+//const carrLocalStorage=  JSON.parse(localStorage.getItem('productos'));
 //aca en realidad tendira que recorrer con
 const actualizarCarrito = () => {
     total=0
