@@ -195,4 +195,5 @@ const eliminarDelCarrito = (prodId) => {
 /*
 Una vez que funcione el vaciar carrito
 no se porque el valor cuando agrego un producto no me lo toma como numerico
+no toma las librerias al profe tampoco le tome el css, tira error
 */
