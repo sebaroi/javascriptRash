@@ -1,27 +1,11 @@
 const botonAgregar = document.getElementById('botonAgregar')
 
 botonAgregar.addEventListener('click', (e) => {
-    cargarDatosProductos(e) // tenia la e
-    alert("producto ingresado")
+    cargarDatosProductos(e) 
+    Swal.fire('Producto ingresado')
     })
 
-/*const guardar =()=> {
-        guardar("prodcutos", JSON.stringify(producto))
-}
-        /*
-        for (const producto of prodcutos){
-            guardar(producto, JSON.stringify(producto))
-        }
-    }*/
 
-/*
-   document.addEventListener('DOMContentLoaded', () => {
-       // if (localStorage.getItem('productos')){
-           // catalogo = JSON.parse(localStorage.getItem('productos'))
-         //   listarProducto() 
-    //    }
-    })
-    */
 
 
 function cargarDatosProductos(e) 
@@ -42,9 +26,6 @@ function cargarDatosProductos(e)
 
     window.location.href="../../backoffice/index.html"
     
-
-
-    //tiene que ser en el array y no en el constructor
 }
 
 

@@ -33,45 +33,27 @@ if(localStorage.getItem('carrito') == null || localStorage.getItem('carrito') ==
 localStorage.setItem('carrito',  JSON.stringify(carrito))
 
 
- /*
-let contCarrito = 0
-function numerarProductos(){
-   let conttotalcarro = conttotalcarro + contCarrito
-    contCarrito++
-    document.getElementById('contadorCarrito').innerHTML = conttotalcarro
-}
-
-function numerarProductosAlBorrar(){
-    /*let conttotalcarro = conttotalcarro - contCarrito
-    contCarrito--
-    document.getElementById('contadorCarrito').innerHTML = conttotalcarro
-}
-*/
-
-                    /*
-                    document.addEventListener('DOMContentLoaded', () => {
-                        if (localStorage.getItem('carrito')){
-                            carrito = JSON.parse(localStorage.getItem('carrito'))
-                        //    actualizarCarrito()
-                        }
-                    })
-                    */
-
-
-
-
 
 botonVaciar.addEventListener('click', () => {
-    //let borrar=  JSON.parse(localStorage.getItem('carrito'));
-  //  carrLocalStorage.length = 0
- //   conttotalcarro=0
-  //  document.getElementById('contadorCarrito').innerHTML = conttotalcarro
-  //let newcar= JSON.parse(localStorage.getItem('carrito'));
- //   localStorage.setItem('carrito',  JSON.stringify(newcar))  
- //vaciarLocalStorage()
- 
-// localStorage.setItem('carrito',  JSON.stringify([]))
-   // actualizarCarrito()
+    Swal.fire({
+        title: 'Desea vaciar el carrito?',
+        icon: 'ATENCION',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'BORRAR CARRITO!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            localStorage.setItem('carrito',  JSON.stringify([]))
+            actualizarCarrito()
+          Swal.fire(
+            'BORRADO!',
+            'EL CARRITO SE VACIO',
+            'HECHO'
+          )
+        }
+      })
+
 })
 
 
@@ -113,16 +95,26 @@ let numeroUnidadesItem=0
 
 function agregarAlCarrito (prodId)  {
     let newcar= JSON.parse(localStorage.getItem('carrito'));
-    const existe = productos.some (producto => producto.sku === prodId) 
+    const existe = newcar.some (producto => producto.sku === prodId) 
     if (existe){ 
-        alert("EXISTE")
+        Swal.fire({
+            icon: 'error',
+            title: 'El producto ya esta ingresado en el carrito!',
+        })
+
         newcar.map (producto => { 
             if (producto.sku === prodId){
                 numeroUnidadesItem
             }
         })
-    } else {    
-    alert("Producto agregado al carrito")
+    } else {  
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Producto agregado al carrito',
+            showConfirmButton: false,
+            timer: 1800
+          })  
     const item = productos.find((producto) => producto.sku === prodId)
     let newcar= JSON.parse(localStorage.getItem('carrito'));
     newcar.push(item)
@@ -130,19 +122,6 @@ function agregarAlCarrito (prodId)  {
 }
     actualizarCarrito()
 }
-
-
-       /* Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Producto agregado al carrito',
-        showConfirmButton: false,
-        timer: 1500
-      })*/
-
-
-  //  numerarProductos()      */
-
 
 
 
@@ -177,23 +156,36 @@ const actualizarCarrito = () => {
 
 
 
-
-
 const eliminarDelCarrito = (prodId) => { 
-    let newcar= JSON.parse(localStorage.getItem('carrito'));
-  //  localStorage.setItem('carrito',  JSON.stringify(newcar))
-    const item = newcar.find((producto) => producto.sku === prodId)
-    const indice = newcar.indexOf(item) 
-    newcar.splice(indice, 1) 
-  //  numerarProductosAlBorrar()
-    localStorage.removeItem("carrito"); 
-    localStorage.setItem('carrito',  JSON.stringify(newcar))
-    alert("Borrado")
-    actualizarCarrito()
+
+    Swal.fire({
+        title: 'Desea eliminar el producto?',
+        icon: 'ATENCION',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Borrarlo!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            let newcar= JSON.parse(localStorage.getItem('carrito'));
+            //  localStorage.setItem('carrito',  JSON.stringify(newcar))
+            const item = newcar.find((producto) => producto.sku === prodId)
+            const indice = newcar.indexOf(item) 
+            newcar.splice(indice, 1) 
+            localStorage.removeItem("carrito"); 
+            localStorage.setItem('carrito',  JSON.stringify(newcar))
+            Swal.fire(
+            'Borrado!',
+            'El producto se quito del carrito',
+            'success'
+            )
+        }
+        actualizarCarrito()
+      })
+
+
 }
 
 /*
-Una vez que funcione el vaciar carrito
 no se porque el valor cuando agrego un producto no me lo toma como numerico
-no toma las librerias al profe tampoco le tome el css, tira error
 */
