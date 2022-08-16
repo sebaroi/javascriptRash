@@ -412,18 +412,22 @@ text-align: left; }
 
 
 #botonCarrito {
-  border: none;
-  color: royalblue;
-  font-size: 40px;
+  color: #318aac;
+  font-size: 30px;
   background-color: white;
+  border: none;
   border-radius: 50%;
-  padding: 10px 20px;
+  padding: 10px 25px;
   transition: all .3s;
+  font-family: "Roboto";
 }
+
+
+
 #botonCarrito:hover {
   cursor: pointer;
   color: white;
-  background-color: royalblue;
+  background-color: #318aac;
 }
 #botonCarrito:focus {
   outline: none;
@@ -440,7 +444,7 @@ text-align: left; }
 
 
 p {
-  line-height: 1.8;
+  line-height: 1;
 }
 .producto {
   max-width: 20%;
@@ -473,3 +477,5 @@ p {
 height: 40%;
 width: 40%; 
 }
+
+

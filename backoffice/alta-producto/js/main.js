@@ -14,25 +14,25 @@ botonAgregar.addEventListener('click', (e) => {
         }
     }*/
 
-
+/*
    document.addEventListener('DOMContentLoaded', () => {
        // if (localStorage.getItem('productos')){
            // catalogo = JSON.parse(localStorage.getItem('productos'))
          //   listarProducto() 
     //    }
     })
-    
+    */
 
 
 function cargarDatosProductos(e) 
 {
     e.preventDefault()
-    const id = document.getElementById("id").value;
+    const id = Number(document.getElementById("id")).value;
     const cate = document.getElementById("cate").value;
     const nombre = document.getElementById("nombre").value;
-    const valor = document.getElementById("valor").value;
+    const valor = Number(document.getElementById("valor")).value;
     const descri = document.getElementById("descri").value;
-    const cantidad = document.getElementById("cantidad").value;
+    const cantidad = Number(document.getElementById("cantidad")).value;
     const imag = document.getElementById("imagen").value;
     let nuevo = new Producto (id, cate, nombre, valor, descri, cantidad, imag)
 

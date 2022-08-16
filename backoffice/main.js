@@ -14,6 +14,7 @@ const categorias = ["placas de Video", "mother", "Notebooks", "monitores" ]
 const nodoPrincipal = document.getElementById("contenedorProductos")
 const contenedorCarrito = document.getElementById('carritoContenedor')
 const botonVaciar = document.getElementById('vaciarCarrito')
+const contadorCarrito = document.getElementById('contadorCarrito')
 const cantidad = document.getElementById('cantidad')
 const precioTotal = document.getElementById('precioTotal')
 const cantidadTotal = document.getElementById('cantidadTotal')
@@ -26,6 +27,10 @@ botonProd.addEventListener("click", ()=>{
 
 
 let carrito = []
+
+
+if(localStorage.getItem('carrito') == null || localStorage.getItem('carrito') == 'null')
+localStorage.setItem('carrito',  JSON.stringify(carrito))
 
 
  /*
@@ -43,31 +48,37 @@ function numerarProductosAlBorrar(){
 }
 */
 
-/*
-document.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('carrito')){
-        carrito = JSON.parse(localStorage.getItem('carrito'))
-    //    actualizarCarrito()
-    }
-})
-*/
+                    /*
+                    document.addEventListener('DOMContentLoaded', () => {
+                        if (localStorage.getItem('carrito')){
+                            carrito = JSON.parse(localStorage.getItem('carrito'))
+                        //    actualizarCarrito()
+                        }
+                    })
+                    */
 
-if(localStorage.getItem('carrito') == null || localStorage.getItem('carrito') == 'null')
-localStorage.setItem('carrito',  JSON.stringify(carrito))
-const carrLocalStorage=  JSON.parse(localStorage.getItem('carrito'));
+
 
 
 
 botonVaciar.addEventListener('click', () => {
-    carrito.length = 0
+    //let borrar=  JSON.parse(localStorage.getItem('carrito'));
+  //  carrLocalStorage.length = 0
  //   conttotalcarro=0
   //  document.getElementById('contadorCarrito').innerHTML = conttotalcarro
-    localStorage.clear()
-    actualizarCarrito()
+  //let newcar= JSON.parse(localStorage.getItem('carrito'));
+ //   localStorage.setItem('carrito',  JSON.stringify(newcar))  
+ //vaciarLocalStorage()
+ 
+// localStorage.setItem('carrito',  JSON.stringify([]))
+   // actualizarCarrito()
 })
+
+
 
 if(localStorage.getItem('productos') == null || localStorage.getItem('productos') == 'null')
     localStorage.setItem('productos',  JSON.stringify(productos))
+
 
 const prodLocalStorage=  JSON.parse(localStorage.getItem('productos'));
 prodLocalStorage.forEach((producto)=>{
@@ -98,53 +109,50 @@ prodLocalStorage.forEach((producto)=>{
 })
 
 
-const numeroUnidadesItem = carrito.reduce((total, itemId) => {
-    // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
-    return itemId === item ? total += 1 : total;
-}, 0);
-// Creamos el nodo del item del carrito
-//miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divis
-
+let numeroUnidadesItem=0
 
 function agregarAlCarrito (prodId)  {
-    alert("Producto agregado al carrito")
-
-    
-/*  const existe = carrito.some (producto => producto.sku === prodId) 
-    if (existe){ //SI YA ESTÁ EN EL CARRITO, ACTUALIZAMOS LA CANTIDAD
+    let newcar= JSON.parse(localStorage.getItem('carrito'));
+    const existe = productos.some (producto => producto.sku === prodId) 
+    if (existe){ 
         alert("EXISTE")
-        const Nuevoproducto = carrito.map (prod => { //creamos un nuevo arreglo e iteramos sobre cada curso y cuando
-            // map encuentre cual es el q igual al que está agregado, le suma la cantidad
-            if (Nuevoproducto.sku === prodId){
-                cant++
+        newcar.map (producto => { 
+            if (producto.sku === prodId){
+                numeroUnidadesItem
             }
         })
     } else {    
-  //  numerarProductos()      */
-
- // let item= JSON.parse(localStorage.getItem('carrito'));
- // item.push(nuevo)
- carrLocalStorage
-  localStorage.setItem('carrito',  JSON.stringify(item))
-
-    //    const item = productos.find((producto) => producto.sku === prodId)
-    //    carrito.push(item)
-     //   carrito = JSON.parse(localStorage.getItem('carrito'))
-
+    alert("Producto agregado al carrito")
+    const item = productos.find((producto) => producto.sku === prodId)
+    let newcar= JSON.parse(localStorage.getItem('carrito'));
+    newcar.push(item)
+    localStorage.setItem('carrito',  JSON.stringify(newcar))
+}
+    actualizarCarrito()
 }
 
 
+       /* Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Producto agregado al carrito',
+        showConfirmButton: false,
+        timer: 1500
+      })*/
 
-//localStorage.setItem('carrito', JSON.stringify(carrito))
-//actualizarCarrito()
 
-//const carrLocalStorage=  JSON.parse(localStorage.getItem('productos'));
-//aca en realidad tendira que recorrer con
+  //  numerarProductos()      */
+
+
+
+
+
 const actualizarCarrito = () => {
+    const carrLocalStorage=  JSON.parse(localStorage.getItem('carrito'));
     total=0
     precioPro=0
     contenedorCarrito.innerHTML=""
-    carrito.forEach((producto) => {
+    carrLocalStorage.forEach((producto) => {
         precioPro=producto.precio
         total+= precioPro
 
@@ -153,30 +161,38 @@ const actualizarCarrito = () => {
         div.innerHTML = `
         <p>${producto.nombreProdu}</p>
         <p>Precio:$ ${producto.precio}</p>
-        <p>Cantidad: <span id="cantidad">${numeroUnidadesItem} </span></p>
+        <p>Cantidad: <span id="cantidad">${producto.numeroUnidadesItem} </span></p>
         <button onclick="eliminarDelCarrito(${producto.sku})"class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
 
         `
         contenedorCarrito.appendChild(div)
-    //    preciotot= preciotot + ${producto.precio} 
-       localStorage.setItem('carrito', JSON.stringify(carrito))
+        localStorage.setItem('carrito',  JSON.stringify(carrLocalStorage))
+      // localStorage.setItem('carrito', JSON.stringify(carrito))
     })
+    contadorCarrito.innerText = carrLocalStorage.length
 
-    //contCarrito = precioprod + 1 
    precioTotal.innerText = total
 }
 
- //   preciotot= preciotot + ${producto.precio} 
+
+
+
 
 
 const eliminarDelCarrito = (prodId) => { 
-
-    const item = carrito.find((producto) => producto.sku === prodId)
-    const indice = carrito.indexOf(item) 
-    carrito.splice(indice, 1) 
+    let newcar= JSON.parse(localStorage.getItem('carrito'));
+  //  localStorage.setItem('carrito',  JSON.stringify(newcar))
+    const item = newcar.find((producto) => producto.sku === prodId)
+    const indice = newcar.indexOf(item) 
+    newcar.splice(indice, 1) 
   //  numerarProductosAlBorrar()
     localStorage.removeItem("carrito"); 
-    localStorage.setItem('carrito', JSON.stringify(carrito))
+    localStorage.setItem('carrito',  JSON.stringify(newcar))
     alert("Borrado")
-
+    actualizarCarrito()
 }
+
+/*
+Una vez que funcione el vaciar carrito
+no se porque el valor cuando agrego un producto no me lo toma como numerico
+*/
