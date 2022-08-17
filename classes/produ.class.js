@@ -4,7 +4,7 @@ class Producto{
         this.sku = sku;
         this.categoria = categoria;
         this.nombreProdu = nombreProdu;
-        this.precio = precio;
+        this.precio =  precio;
         this.descripcion = descripcion;
         this.stock = stock;
         this.imagen = imagen;

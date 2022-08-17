@@ -86,40 +86,31 @@ prodLocalStorage.forEach((producto)=>{
 
     const boton = document.getElementById(element)
     boton.addEventListener('click', () => {
-    agregarAlCarrito(producto.sku)
+    agregarAlCarrito(producto)
     })
 })
 
 
 let numeroUnidadesItem=0
-
-function agregarAlCarrito (prodId)  {
-    let newcar= JSON.parse(localStorage.getItem('carrito'));
-    const existe = newcar.some (producto => producto.sku === prodId) 
-    if (existe){ 
-        Swal.fire({
-            icon: 'error',
-            title: 'El producto ya esta ingresado en el carrito!',
-        })
-
-        newcar.map (producto => { 
-            if (producto.sku === prodId){
-                numeroUnidadesItem
-            }
-        })
-    } else {  
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Producto agregado al carrito',
-            showConfirmButton: false,
-            timer: 1800
-          })  
-    const item = productos.find((producto) => producto.sku === prodId)
-    let newcar= JSON.parse(localStorage.getItem('carrito'));
-    newcar.push(item)
-    localStorage.setItem('carrito',  JSON.stringify(newcar))
-}
+let existe
+// let newcar= JSON.parse(localStorage.getItem('carrito'));
+function agregarAlCarrito (producto)  {
+const estaEnElCarrito = carrito.find(carrito => carrito.sku == producto.sku)
+    if (!estaEnElCarrito) {
+        carrito.push({nombre: producto.nombreProdu, precio: producto.precio, sku: producto.sku, cantidad: 1})
+    } else {
+        const index = carrito.indexOf(estaEnElCarrito)
+        carrito[index].cantidad++
+    }
+    console.log(carrito);
+    localStorage.setItem('carrito',  JSON.stringify(carrito))
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Se agrego un producto',
+        showConfirmButton: false,
+        timer: 1500
+      })
     actualizarCarrito()
 }
 
@@ -138,9 +129,9 @@ const actualizarCarrito = () => {
         const div = document.createElement('div')
         div.className = ('productoEnCarrito')
         div.innerHTML = `
-        <p>${producto.nombreProdu}</p>
+        <p>${producto.nombre}</p>
         <p>Precio:$ ${producto.precio}</p>
-        <p>Cantidad: <span id="cantidad">${producto.numeroUnidadesItem} </span></p>
+        <p>Cantidad: <span id="cantidad">${producto.cantidad} </span></p>
         <button onclick="eliminarDelCarrito(${producto.sku})"class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
 
         `
