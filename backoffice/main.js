@@ -44,6 +44,10 @@ botonVaciar.addEventListener('click', () => {
         confirmButtonText: 'BORRAR CARRITO!'
       }).then((result) => {
         if (result.isConfirmed) {
+            //localStorage.clear(carrito)
+            //carrito = []
+            precioTotal.innerText =`0`
+
             localStorage.setItem('carrito',  JSON.stringify([]))
             actualizarCarrito()
           Swal.fire(
@@ -53,7 +57,6 @@ botonVaciar.addEventListener('click', () => {
           )
         }
       })
-
 })
 
 
@@ -81,7 +84,6 @@ prodLocalStorage.forEach((producto)=>{
                     </div>
                 </div> `
     nodoPrincipal.appendChild(divProducto);
-    //document.body.appendChild()
     let element= `agregar${producto.sku}`
 
     const boton = document.getElementById(element)
@@ -91,7 +93,7 @@ prodLocalStorage.forEach((producto)=>{
 })
 
 
-let numeroUnidadesItem=0
+let productosEnCarrito=0
 let existe
 // let newcar= JSON.parse(localStorage.getItem('carrito'));
 function agregarAlCarrito (producto)  {
@@ -101,6 +103,14 @@ const estaEnElCarrito = carrito.find(carrito => carrito.sku == producto.sku)
     } else {
         const index = carrito.indexOf(estaEnElCarrito)
         carrito[index].cantidad++
+        productosEnCarrito++
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1500
+          })
     }
     console.log(carrito);
     localStorage.setItem('carrito',  JSON.stringify(carrito))
@@ -119,12 +129,8 @@ const estaEnElCarrito = carrito.find(carrito => carrito.sku == producto.sku)
 
 const actualizarCarrito = () => {
     const carrLocalStorage=  JSON.parse(localStorage.getItem('carrito'));
-    total=0
-    precioPro=0
     contenedorCarrito.innerHTML=""
     carrLocalStorage.forEach((producto) => {
-        precioPro=producto.precio
-        total+= precioPro
 
         const div = document.createElement('div')
         div.className = ('productoEnCarrito')
@@ -141,7 +147,8 @@ const actualizarCarrito = () => {
     })
     contadorCarrito.innerText = carrLocalStorage.length
 
-   precioTotal.innerText = total
+    precioTotal.innerText = carrito.reduce((acc, producto) => acc+ producto.precio * producto.cantidad, 0)
+
 }
 
 
@@ -177,6 +184,3 @@ const eliminarDelCarrito = (prodId) => {
 
 }
 
-/*
-no se porque el valor cuando agrego un producto no me lo toma como numerico
-*/
