@@ -180,7 +180,24 @@ const eliminarDelCarrito = (prodId) => {
         }
         actualizarCarrito()
       })
-
-
 }
 
+
+
+const modificar = document.getElementById('botonAgregar')
+
+modificar.addEventListener('click', () => {
+    modificarProducto()
+    })
+
+    function modificarProducto(){
+       innerHTML = `<div class="input-group flex-nowrap">
+       <span class="input-group-text">ID</span>
+       <input type="text"  id="id" class="form-control" placeholder="id" aria-label="nombre" aria-describedby="addon-wrapping">
+   </div>`
+    }
+
+    /*
+    para modificar el producto tengo que preguntar que producto se desea modificar, buscarlo en el array de productos y al encontrarlo
+    que me pise los cargarDatosProductos, y si no me los encuentra decirle que el dato no se encontrarlo
+    recorrer el array con un forEach*/

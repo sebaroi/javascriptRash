@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="../classes/catalogoProdu.class.js"></script>
+    <script defer src="../classes/produ.class.js"></script>
+    <script defer src="../backoffice/main.js"></script>
+    <script defer src="../backoffice/modal.js"></script>
+    <script defer src="../frontoffice/js/main.js"></script>
+    <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- JavaScript Bundle with Popper -->
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5e96413f29.js" crossorigin="anonymous"></script>
+        <title>Document</title>
+</head>
+<!-- ------------------------encabezado-------------------------------------------- -->
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-lignt">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html"><img src="../imagenes/logoChico1.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle color-menu" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                PC DE ESCRITORIO
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="./pages/pcEscritorio.html">PC DE
+                                        ESCRITORIO</a>
+                                </li>
+                                <li><a class="dropdown-item" href="./pages/pcEscrCombosActualizacion.html">COMBOS
+                                        ACTUALIZACION</a></li>
+                                <li><a class="dropdown-item" href="./pages/pcEscrMemoriaRam.html">MEMORIA RAM</a>
+                                </li>
+                                <li><a class="dropdown-item" href="./pages/pcEscrPlacasVideo.html">PLACAS DE
+                                        VIDEO</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                NOTEBOOKS
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="./pages/laptos.html">NOTEBOOKS</a></li>
+                                <li><a class="dropdown-item" href="./pages/laptos.html">LENOVO</a></li>
+                                <li><a class="dropdown-item" href="./pages/laptos.html">ASUS</a></li>
+                                <li><a class="dropdown-item" href="./pages/laptos.html">HP</a></li>
+                                <li><a class="dropdown-item" href="./pages/laptos.html">DELL</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                MONITORES
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="./pages/monitores.html">MONITORES</a></li>
+                                <li><a class="dropdown-item" href="./pages/monitores.html">SAMSUNG</a></li>
+                                <li><a class="dropdown-item" href="./pages/monitores.html">LG</a></li>
+                                <li><a class="dropdown-item" href="./pages/monitores.html">SONY</a></li>
+                                <li><a class="dropdown-item" href="./pages/monitores.html">VIEWSONIC</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                SILLAS GAMERS
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="./pages/sillasGamers.html">SILLAS GAMERS</a>
+                                </li>
+                                <li><a class="dropdown-item" href="./pages/sillasGamers.html">PREMIUM</a></li>
+                                <li><a class="dropdown-item" href="./pages/sillasGamers.html">STANDAR</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="usuario">
+                        <button id="usuarios"> <img class="imagenUsuario" src="../imagenes/icono user.png" alt="auriculares"><img src="../proyecto-rash/imagenes/asus.png" alt=""> <a href=""></a></button>
+                    </div>
+                   
+                    <div class="input-group ps-5">
+                        <div id="navbar-search-autocomplete" class="form-outline">
+                            <input type="search" id="form1" class="form-control" />
+                        </div>
+                        <button type="button" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!--------------------------------carrusel--------------------------------->
+    <main class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../imagenes/carrusel.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../imagenes/carrusel2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../imagenes/carrusel3.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- -----------------------------imagenes de envio--------------------------------- -->
+        <div class="row">
+            <div class="col-lg-4"><img src="../imagenes/envio.jpg" class="img-fluid img-thumbnail" alt="Envio"></div>
+            <div class="col-lg-4"><img src="../imagenes/mediosdepago.jpg" class="img-fluid img-thumbnail"></div>
+            <div class="col-lg-4"><img src="../imagenes/retiro.jpg" class="img-fluid img-thumbnail" alt="Retiro"></div>
+        </div>
+
+        <!-- -----------------------------imagenes de logos------------------------------------- -->
+        <section class="imagenesCentrales">
+            <img src="../imagenes/amd.png" alt="logo_amd">
+            <img src="../imagenes/asus.png" alt="logo_asus">
+            <img src="../imagenes/corsair.png" alt="logo_corsair">
+            <img src="../imagenes/hyperx.png" alt="logo_hiperhex">
+            <img src="../imagenes/logitech.png" alt="logo_logitech">
+            <img src="../imagenes/intelnewlogoblanco.png" alt="logo_intel">
+            <img src="../imagenes/kingston.png" alt="logo_kingston">
+            <img src="../imagenes/msi.png" alt="logo_msi">
+        </section>
+        <br>
+
+
+        <div class="articulos">
+            <seccion class="secciones">
+                <article class="marca-main">
+                    <div><a href="./pages/parlantes.html"><img src="../imagenes/Parlantes.jpg" alt="parlantesNotebooks"></a></div>
+                </article>
+                <article class="marca-main">
+                    <div><a href="./pages/pcEscrPlacasVideo.html"><img src="../imagenes/video6.webp" alt="PlacaDeVideo"></a></div>
+                </article>
+                <article class="marca-main">
+                    <div><a href="./pages/auricularesGamin.html"><img src="../imagenes/AURICULARES-GAMINGchico.jpg" alt="Auriculares"></a></div>
+                </article>
+                <article class="marca-main">
+                    <div><a href="./pages/ofertasMes.html"><img src="../imagenes/ofertasdelmeschico.jpg" alt="Ofertas"></a></div>
+                </article>
+            </seccion>
+        </div>
+        <br>
+
+
+      
+
+
+
+
+
+
+
+        <br><br>
+        <div class="container">
+            <div class="row g-3 w-100">
+                <h2>ACCESORIOS Y PERIFERICOS</h2>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="marcoProducto">
+                        <div class="imagenProducto">
+                            <a href="./pages/accMouse.html"><img src="./imagenes/mouse1.webp" alt="mouse"></a>
+                        </div>
+                        <div class="textoProducto">
+                            <p>MOUSE REDRAGON CPBRA M711-FPS BLACK</p>
+                            <p>$4.999-</p>
+                            <hr>
+                            <div class="botonComprar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <button class="button">COMPRAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="marcoProducto">
+                        <div class="imagenProducto">
+                            <a href="./pages/accCam.html"><img src="./imagenes/webcam3-2.webp" alt="webcam"></a>
+                        </div>
+                        <div class="textoProducto">
+                            <p>WEB CAM USB GENIUS ECAM 8000</p>
+                            <p>$9.999-</p>
+                            <hr>
+                            <div class="botonComprar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <button class="button">COMPRAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="marcoProducto">
+                        <div class="imagenProducto">
+                            <a href="./pages/accAuris.html"><img src="./imagenes/auris1.webp" alt="auriculares"></a>
+                        </div>
+                        <div class="textoProducto">
+                            <p>HYPERX CLOUD STINGER CORE</p>
+                            <p>$7.999-</p>
+                            <br>
+                            <hr>
+                            <div class="botonComprar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <button class="button">COMPRAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="marcoProducto">
+                        <div class="imagenProducto">
+                            <a href="./pages/accLuzLed.html"><img src="./imagenes/luzled.webp" alt="luzUsb"></a>
+                        </div>
+                        <div class="textoProducto">
+                            <p>LUZ LED LAMPARA FLEXIBLE USB</p>
+                            <p>$799-</p>
+                            <br>
+                            <hr>
+                            <div class="botonComprar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <button class="button">COMPRAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br>
+        <h2>TODO LO QUE BUSCAS EN UN SOLO LUGAR</h2>
+
+        <div class="row w-100">
+            <div class="col-lg-4"><a href="./pages/pcEscrPlacasVideo.html"><img src="../imagenes/placas.jpg"
+                        class="img-fluid img-thumbnail" alt="Envio"></a></div>
+            <div class="col-lg-4"><a href="./pages/parlantes.html"><img src="../imagenes/perifericos.jpg" class="img-fluid img-thumbnail"
+                    alt="Retiro"></a></div>
+            <div class="col-lg-4"><a href="./pages/pcEscrCombosActualizacion.html"><img src="../imagenes/mothers1.jpg"
+                    class="img-fluid img-thumbnail"></a></div>
+        </div>
+    </main>
+    <br>
+    <div class="botonWhatsApp">
+        <a href="https://api.whatsapp.com/send?phone=+541163616333" target="_blank"><img
+                src="../imagenes/logoWhatsapp.png" alt="Link a WhatsApp"></a>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Mi Carrito</h4>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>El producto fue agregado correctamente.</p>
+                    <p>Agregue mas productos presionando SEGUIR COMPRANDO.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">ir al carrito</button>
+                    <button class="btn btn-primary" data-bs-dismiss="modal">Seguir Comprando</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="nb-footer">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-info-single">
+                            <div class="contenedorLogo">
+                                <a href="./index.html"><img src="../imagenes/logoChico1.png" alt="logo"></a>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-info-single">
+                        <br><br>
+                        <h2 class="title">INFORMACION</h2>
+                        <ul>
+                            <li><a href="#"></a></li>
+                            <li><a href="./pages/preguntasFrecuentes.html">¿Preguntas Frequentes?</a></li>
+                            <li><a href="./pages/formasDePago.html">Formas de pago</a></li>
+                            <li><a href="./pages/TerminosCondiciones.html">Terminos y Condiciones</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-info-single">
+                        <br><br>
+                        <h2 class="title">ACERCA DE RASH</h2>
+                        <ul>
+                            <li><a href="./pages/quienesSomos.html">¿Quienes Somos?</a></li>
+                            <li><a href="./pages/ubicacion.html">Ubicacion</a></li>
+                            <li><a href="./pages/contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-info-single">
+                        <br><br>
+                        <h2 class="title">SEGUINOS EN NUESTRAS REDES</h2>
+                        <div class="ContenedorRedesSociales">
+                            <div class="redesSociales">
+                                <a href="https://www.instagram.com" target="_blank"><img src="../imagenes/instagram.png"
+                                        alt="logo_instagram"></a>
+                                <a href="https://www.facebook.com" target="_blanck"><img src="../imagenes/facebook.png"
+                                        alt="Logo_facebook"></a>
+                                <a href="https://www.twiter.com" target="_blanck"><img src="../imagenes/twitter-.webp"
+                                        alt="Logo_twiter"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container1">
+            <div class="row textoFooter">
+                <div class="col-md-3 col-sm-3"></div>
+                <div class="col-md-6 col-sm-6">
+                    <p>SUBSCRIBITE A NUESTRO NEWSLETTER</p>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="text" placeholder="Ingresa tu E-mail">
+                        <button class="btn btn-primary" type="button">Unite</button>
+                    </form>
+                </div>
+                <div class="col-md-3 col-sm-3"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row ">
+                <div class="col-sm-12 margenFooter"></div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+</body>
+</html>
