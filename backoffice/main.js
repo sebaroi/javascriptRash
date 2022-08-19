@@ -183,7 +183,7 @@ const eliminarDelCarrito = (prodId) => {
 }
 
 
-
+/*
 const modificar = document.getElementById('botonAgregar')
 
 modificar.addEventListener('click', () => {

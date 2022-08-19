@@ -78,7 +78,6 @@ function busPro()
 
 
 
-
 function modificar () {
     window.location.href="../backoffice/modificarProducto.html"
     const cate = document.getElementById("cate").value;
