@@ -212,7 +212,39 @@ modificar.addEventListener('click', () => {
                   cancelButtonText: "CANCELAR"
                 }).then((result) => {
                   if (result.value) {
-                    cargarDatosProductos(e) 
+
+                    
+
+
+                  //  document.getElementById("valor").value = productos.precio
+
+
+
+                    innerHTML = `
+
+                    document.getElementById("id").value = productos.sku
+                    <input type="text" id="cate" class="form-control" placeholder="Categoria" aria-label="nombre" aria-describedby="addon-wrapping">
+                    
+                    document.getElementById("cate").value = productos.categoria
+                    <input type="text" id="nombre" class="form-control" placeholder="nombre" aria-label="nombre" aria-describedby="addon-wrapping">
+                    
+                    document.getElementById("nombre").value = productos.nombreProdu
+                    <input type="text" id="valor" class="form-control" placeholder="precio" aria-label="nombre" aria-describedby="addon-wrapping">
+                    
+                    document.getElementById("descri").value = productos.descripcion
+                    <textarea class="form-control" id="descri" name="mensaje" id="descripcion" cols="30" rows="3"
+                    placeholder="descripcion" aria-label="nombre" aria-describedby="addon-wrapping"></textarea>
+                    
+                    document.getElementById("cantidad").value = productos.stock
+                    <input type="text" id="cantidad" class="form-control" placeholder="Stock" aria-label="nombre" aria-describedby="addon-wrapping">
+                    
+                    document.getElementById("imagen").value = productos.imagen
+                    <input type="text" id="imagen" class="form-control" placeholder="Imagen" aria-label="nombre" aria-describedby="addon-wrapping">
+ 
+       
+
+        `
+                //    window.location.href="../backoffice/alta-producto/modificarProducto.html"  
                   }
                 })
               }
