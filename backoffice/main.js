@@ -182,22 +182,87 @@ const eliminarDelCarrito = (prodId) => {
       })
 }
 
+debugger
 
-/*
-const modificar = document.getElementById('botonAgregar')
+const modificar = document.getElementById('modificar')
 
 modificar.addEventListener('click', () => {
     modificarProducto()
     })
 
     function modificarProducto(){
-       innerHTML = `<div class="input-group flex-nowrap">
-       <span class="input-group-text">ID</span>
-       <input type="text"  id="id" class="form-control" placeholder="id" aria-label="nombre" aria-describedby="addon-wrapping">
-   </div>`
-    }
+        Swal.fire({
+            title: "Modificar un Producto",
+            text: "Ingrese el ID del producto a modificar:",
+            input: 'number',
+            showCancelButton: true,
+            cancelButtonText: "CANCELAR"
+          }).then((result) => {
+            let nuevoId = result.value
+            if (nuevoId != undefined) {
+              let modificarProducto = productos.find(productos => productos.sku == nuevoId)
+              if (modificarProducto == undefined) {
+                Swal.fire("Producto no encontrado", "El codigo ingresado no corresponde a ningun producto", "error")
+              } else {
+                Swal.fire({
+                  title: "Modificar Producto",
+                  text: `¿Esta seguro ?`,
+                  icon: "warning",
+                  showCancelButton: true,
+                  cancelButtonText: "CANCELAR"
+                }).then((result) => {
+                  if (result.value) {
+                    cargarDatosProductos(e) 
+                  }
+                })
+              }
+            }
+          })
+        }
+
 
     /*
     para modificar el producto tengo que preguntar que producto se desea modificar, buscarlo en el array de productos y al encontrarlo
     que me pise los cargarDatosProductos, y si no me los encuentra decirle que el dato no se encontrarlo
     recorrer el array con un forEach*/
+
+
+    const borrar = document.getElementById('borrar')
+
+    borrar.addEventListener('click', () => {
+    borrarProducto()
+    })
+    function borrarProducto(){
+        Swal.fire({
+            title: "Eliminar un Producto",
+            text: "Ingrese el ID del producto a Eliminar:",
+            input: 'number',
+            showCancelButton: true,
+            cancelButtonText: "CANCELAR"
+          }).then((result) => {
+            let nuevoId = result.value
+            if (nuevoId != undefined) {
+              let eliminarProducto = productos.find(productos => productos.sku == nuevoId)
+              const indice = productos.indexOf(eliminarProducto)
+
+              if (eliminarProducto == undefined) {
+                Swal.fire("Producto no encontrado", "El codigo ingresado no corresponde a ningun producto", "error")
+              } else {
+                Swal.fire({
+                  title: "Eliminar Producto",
+                  text: `¿Esta seguro ?`,
+                  icon: "warning",
+                  showCancelButton: true,
+                  cancelButtonText: "CANCELAR"
+                }).then((result) => {
+                  if (result.value) {
+                    productos.splice(indice, 1)
+                    localStorage.removeItem("productos")
+                    localStorage.setItem('productos',  JSON.stringify(productos))
+                    alert(productos)
+                    window.location.href="../backoffice/index.html"                  }
+                })
+              }
+            }
+          })
+        }
