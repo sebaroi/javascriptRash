@@ -28,11 +28,8 @@ botonProd.addEventListener("click", ()=>{
 
 
 const modificar = document.getElementById('modificar')
-
 modificar.addEventListener('click', () => {
-
     window.location.href="../backoffice/alta-producto/modificarProducto.html"
-
     })
 
 
@@ -41,7 +38,6 @@ let carrito = []
 
 if(localStorage.getItem('carrito') == null || localStorage.getItem('carrito') == 'null')
 localStorage.setItem('carrito',  JSON.stringify(carrito))
-
 
 
 botonVaciar.addEventListener('click', () => {
@@ -73,7 +69,6 @@ botonVaciar.addEventListener('click', () => {
 
 if(localStorage.getItem('productos') == null || localStorage.getItem('productos') == 'null')
     localStorage.setItem('productos',  JSON.stringify(productos))
-
 
 const prodLocalStorage=  JSON.parse(localStorage.getItem('productos'));
 prodLocalStorage.forEach((producto)=>{
@@ -165,7 +160,6 @@ const actualizarCarrito = () => {
 
 
 const eliminarDelCarrito = (prodId) => { 
-
     Swal.fire({
         title: 'Desea eliminar el producto?',
         icon: 'ATENCION',
@@ -191,7 +185,6 @@ const eliminarDelCarrito = (prodId) => {
         actualizarCarrito()
       })
 }
-
 
 
 const borrar = document.getElementById('borrar')
@@ -226,7 +219,6 @@ Swal.fire({
             productos.splice(indice, 1)
             localStorage.removeItem("productos")
             localStorage.setItem('productos',  JSON.stringify(productos))
-            alert(productos)
             window.location.href="../backoffice/index.html"                  }
         })
       }

@@ -1,29 +1,46 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="../classes/catalogoProdu.class.js"></script>
-    <script defer src="../classes/produ.class.js"></script>
-    <script defer src="../login/index.js"></script>
-    <link rel="stylesheet" href="../style/estilo.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/5e96413f29.js" crossorigin="anonymous"></script>
-        <title>Document</title>
-</head>
-<body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-    <div id="loginForm">
-        <fieldset>
-            <h3>Complete los datos</h3>
-            <input type="text" name="username" id="username" placeholder="username">
-            <input type="password" name="password" id="password" placeholder="password">
-            <button id="btnLogin">Acceder</button>
-        </fieldset>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../login/loginStyle.css">
+
+
+<!-- <div class="text-center">
+        <h1>Login</h1>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Abrir modal</button>
     </div>
-
-
-</body>
-</html>
+   -->
+    <div id="myModal" class="modal face">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <div class="modal-body">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="username" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="password" required="required">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Ingresar</button>
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-lg btn-block register-btn">Registrarse</button>
+                            </div> 
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#">Olvidaste la clave?</a>
+                        <a href="#">Todavia no estas registrado?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
