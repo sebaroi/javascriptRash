@@ -11,14 +11,16 @@ botonAgregar.addEventListener('click', (e) => {
 function cargarDatosProductos(e) 
 {
     e.preventDefault()
-    const id = document.getElementById("id").value;
-    const cate = document.getElementById("cate").value;
-    const nombre = document.getElementById("nombre").value;
-    const valor = document.getElementById("valor").value;
-    const descri = document.getElementById("descri").value;
-    const cantidad = document.getElementById("cantidad").value;
-    const imag = document.getElementById("imagen").value;
-    let nuevo = new Producto (Number (id), cate, nombre, Number(valor), descri, Number(cantidad), imag)
+    let nuevo = { 
+        sku : Number (document.getElementById("id").value),
+        categoria : document.getElementById("cate").value,
+        nombreProdu : document.getElementById("nombre").value,
+        precio : Number(document.getElementById("valor").value),
+        descripcion : document.getElementById("descri").value,
+        stock : Number(document.getElementById("cantidad").value),
+        imagen : document.getElementById("imagen").value
+        }
+    
 
     let vdsdal= JSON.parse(localStorage.getItem('productos'));
     vdsdal.push(nuevo)
