@@ -1,10 +1,9 @@
 let aModificar;
 
 
-/* window.onload=()=> {
+ window.onload=()=> {
   modificarProducto()
-
-} */
+} 
 
 function modificarProducto(){
     Swal.fire({
@@ -33,7 +32,8 @@ function modificarProducto(){
             document.getElementById("valor").value = modificarProducto.precio            
             document.getElementById("descri").value += modificarProducto.descripcion           
             document.getElementById("cantidad").value = modificarProducto.stock            
-            document.getElementById("imagen").value = modificarProducto.imagen            
+            document.getElementById("imagen").value = modificarProducto.imagen      
+            localStorage.setItem('productos',  JSON.stringify(productos))      
           } else {
             Swal.fire("Producto no encontrado", "El codigo ingresado no corresponde a ningun producto", "error")
           }
@@ -42,20 +42,12 @@ function modificarProducto(){
     }
 
 
-
-
-
-
-
-
 const botonModificar = document.getElementById('botonModificar')
 
 botonModificar.addEventListener('click', (e) => {
     modificarProd(e) 
     Swal.fire('Producto modificado')
     })
-
-
 
 
 function modificarProd(e) 
@@ -76,7 +68,6 @@ function modificarProd(e)
         }
         return prod;
         })
-
     localStorage.setItem('productos',  JSON.stringify(modi))
     window.location.href="../../backoffice/index.html"
 }
