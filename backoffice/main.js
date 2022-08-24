@@ -10,7 +10,7 @@ const productos = [
 ]
 
 
-const categorias = ["placas de Video", "mother", "Notebooks", "monitores" ]
+/* const categorias = ["placas de Video", "mother", "Notebooks", "monitores" ]
 const nodoPrincipal = document.getElementById("contenedorProductos")
 const contenedorCarrito = document.getElementById('carritoContenedor')
 const botonVaciar = document.getElementById('vaciarCarrito')
@@ -18,7 +18,7 @@ const contadorCarrito = document.getElementById('contadorCarrito')
 const cantidad = document.getElementById('cantidad')
 const precioTotal = document.getElementById('precioTotal')
 const cantidadTotal = document.getElementById('cantidadTotal')
-const botonProd = document.getElementById('botonProd')
+const botonProd = document.getElementById('botonProd') */
 
 
 botonProd.addEventListener("click", ()=>{
@@ -33,7 +33,7 @@ modificar.addEventListener('click', () => {
     })
 
 
-let carrito = []
+/* let carrito = []
 
 
 if(localStorage.getItem('carrito') == null || localStorage.getItem('carrito') == 'null')
@@ -65,7 +65,7 @@ botonVaciar.addEventListener('click', () => {
       })
 })
 
-
+ */
 
 if(localStorage.getItem('productos') == null || localStorage.getItem('productos') == 'null')
     localStorage.setItem('productos',  JSON.stringify(productos))
@@ -93,7 +93,7 @@ prodLocalStorage.forEach((producto)=>{
 
     const boton = document.getElementById(element)
     boton.addEventListener('click', () => {
-    agregarAlCarrito(producto)
+   /*  agregarAlCarrito(producto) */
     })
 })
 
@@ -101,7 +101,7 @@ prodLocalStorage.forEach((producto)=>{
 let productosEnCarrito=0
 let existe
 // let newcar= JSON.parse(localStorage.getItem('carrito'));
-function agregarAlCarrito (producto)  {
+/* function agregarAlCarrito (producto)  {
 const estaEnElCarrito = carrito.find(carrito => carrito.sku == producto.sku)
     if (!estaEnElCarrito) {
         carrito.push({nombre: producto.nombreProdu, precio: producto.precio, sku: producto.sku, cantidad: 1})
@@ -129,9 +129,9 @@ const estaEnElCarrito = carrito.find(carrito => carrito.sku == producto.sku)
     actualizarCarrito()
 }
 
+ */
 
-
-
+/* 
 const actualizarCarrito = () => {
     const carrLocalStorage=  JSON.parse(localStorage.getItem('carrito'));
     contenedorCarrito.innerHTML=""
@@ -184,7 +184,7 @@ const eliminarDelCarrito = (prodId) => {
         }
         actualizarCarrito()
       })
-}
+} */
 
 
 const borrar = document.getElementById('borrar')

@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script defer src="../classes/catalogoProdu.class.js"></script>
+    <script defer src="../backoffice/productos.js"></script>
     <script defer src="../classes/produ.class.js"></script>
-    <script defer src="../backoffice/main.js"></script>
     <script defer src="../backoffice/modal.js"></script>
     <script defer src="../frontoffice/js/main.js"></script>
     <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -101,9 +102,10 @@
                             </ul>
                         </li>
                     </ul>
-                    <div class="usuario">
+                    
+                <!--     <div class="usuario">
                         <button id="usuarios"data-toggle="modal" data-target="#myModal"> <img class="imagenUsuario" src="../imagenes/icono user.png" alt="iconoUsuario"></button>
-                    </div>
+                    </div> -->
                    
                     <div class="input-group ps-5">
                         <div id="navbar-search-autocomplete" class="form-outline">
@@ -113,6 +115,8 @@
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
+                    <button id="botonCarrito">
+                        <i class="fas fa-shopping-cart"><p id="contadorCarrito">0</p></i></button>
                 </div>
             </div>
         </nav>
@@ -193,8 +197,29 @@
         <br>
 
 
-      
+
         <main>
+            <div class="row g-3" id="contenedorProductos">
+                <br>
+            </div>
+    </main>
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Carrito</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div id="carritoContenedor">
+    
+            </div>
+    
+            <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+            <button id="vaciarCarrito" class="boton-agregar">Vaciar carrito</button>
+            <button id="finalizarCompra" class="boton-agregar">Finalizar compra</button>
+        </div>
+    </div>
+
+
+
+<!--         <main>
             <div class="row g-3" id="contenedorProductos">
                 <br>
             </div>
@@ -205,7 +230,7 @@
             </div>
 
 
-    </main>
+    </main> -->
 
 
 
