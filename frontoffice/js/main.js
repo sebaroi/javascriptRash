@@ -38,10 +38,7 @@ botonVaciar.addEventListener('click', () => {
         confirmButtonText: 'BORRAR CARRITO!'
       }).then((result) => {
         if (result.isConfirmed) {
-            //localStorage.clear(carrito)
-            //carrito = []
             precioTotal.innerText =`0`
-
             localStorage.setItem('carrito',  JSON.stringify([]))
             actualizarCarrito()
           Swal.fire(
@@ -135,12 +132,10 @@ const actualizarCarrito = () => {
         `
         contenedorCarrito.appendChild(div)
         localStorage.setItem('carrito',  JSON.stringify(carrLocalStorage))
-      // localStorage.setItem('carrito', JSON.stringify(carrito))
     })
     contadorCarrito.innerText = carrLocalStorage.length
 
-    precioTotal.innerText = carrito.reduce((acc, producto) => acc+ producto.precio * producto.cantidad, 0)
-
+    precioTotal.innerText = carrLocalStorage.reduce((acc, producto) => acc+ producto.precio * producto.cantidad, 0)
 }
 
 

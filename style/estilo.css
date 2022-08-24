@@ -342,14 +342,15 @@ text-align: left; }
 }
 
 .modal-active {
-    opacity: 1;
+    opacity: 5;
     visibility: visible;
 }
 
 .modal-carrito {
     position: relative;
     background-color: white;
-    min-width: 500px;
+    min-width: 900px;  
+    /*el ancho del modal*/
     padding: 20px;
     margin-top: -100%;
     transition: all .5s;
