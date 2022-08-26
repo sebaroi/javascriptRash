@@ -1,27 +1,20 @@
 
-/* const usuarios = document.getElementById('usuarios')
-
-usuarios.addEventListener('click', () => {
-    window.location.href="../login/login.html"
-    })
- */
-
- //   const nodoPrincipal = document.getElementById("contenedorPerifericos")
 
 
+const categorias = ["placas de Video", "mother", "Notebooks", "monitores" ]
+const nodoPrincipal = document.getElementById("contenedorProductos")
+const principalPerif = document.getElementById("contenedorPerifericos")
+const contenedorCarrito = document.getElementById('carritoContenedor')
+const botonVaciar = document.getElementById('vaciarCarrito')
+const contadorCarrito = document.getElementById('contadorCarrito')
+const cantidad = document.getElementById('cantidad')
+const precioTotal = document.getElementById('precioTotal')
+const cantidadTotal = document.getElementById('cantidadTotal')
+const botonProd = document.getElementById('botonProd')
+/* const oferta = document.getElementById('oferta') */
 
- const categorias = ["placas de Video", "mother", "Notebooks", "monitores" ]
- const nodoPrincipal = document.getElementById("contenedorProductos")
- const contenedorCarrito = document.getElementById('carritoContenedor')
- const botonVaciar = document.getElementById('vaciarCarrito')
- const contadorCarrito = document.getElementById('contadorCarrito')
- const cantidad = document.getElementById('cantidad')
- const precioTotal = document.getElementById('precioTotal')
- const cantidadTotal = document.getElementById('cantidadTotal')
- const botonProd = document.getElementById('botonProd')
 
-
- let carrito = []
+let carrito = []
 
 
 if(localStorage.getItem('carrito') == null || localStorage.getItem('carrito') == 'null')
@@ -36,18 +29,18 @@ botonVaciar.addEventListener('click', () => {
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'BORRAR CARRITO!'
-      }).then((result) => {
+    }).then((result) => {
         if (result.isConfirmed) {
             precioTotal.innerText =`0`
             localStorage.setItem('carrito',  JSON.stringify([]))
             actualizarCarrito()
-          Swal.fire(
-            'BORRADO!',
-            'EL CARRITO SE VACIO',
-            'HECHO'
-          )
+    Swal.fire(
+        'BORRADO!',
+        'EL CARRITO SE VACIO',
+        'HECHO'
+        )
         }
-      })
+    })
 })
 
 
@@ -72,7 +65,18 @@ prodLocalStorage.forEach((producto)=>{
                         </div>
                     </div>
                 </div> `
-    nodoPrincipal.appendChild(divProducto);
+                nodoPrincipal.appendChild(divProducto);
+    if (producto.posicion =='primero'){
+        nodoPrincipal.appendChild(divProducto);
+    }else if (producto.posicion =='segundo'){
+        principalPerif.appendChild(divProducto);
+    }
+
+
+
+
+
+
     let element= `agregar${producto.sku}`
 
     const boton = document.getElementById(element)
@@ -99,7 +103,7 @@ const estaEnElCarrito = carrito.find(carrito => carrito.sku == producto.sku)
             title: 'Your work has been saved',
             showConfirmButton: false,
             timer: 1500
-          })
+        })
     }
     console.log(carrito);
     localStorage.setItem('carrito',  JSON.stringify(carrito))
@@ -109,10 +113,9 @@ const estaEnElCarrito = carrito.find(carrito => carrito.sku == producto.sku)
         title: 'Se agrego un producto',
         showConfirmButton: false,
         timer: 1500
-      })
+    })
     actualizarCarrito()
 }
-
 
 
 
@@ -140,7 +143,6 @@ const actualizarCarrito = () => {
 
 
 
-
 const eliminarDelCarrito = (prodId) => { 
     Swal.fire({
         title: 'Desea eliminar el producto?',
@@ -149,7 +151,7 @@ const eliminarDelCarrito = (prodId) => {
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Borrarlo!'
-      }).then((result) => {
+    }).then((result) => {
         if (result.isConfirmed) {
             let newcar= JSON.parse(localStorage.getItem('carrito'));
             //  localStorage.setItem('carrito',  JSON.stringify(newcar))
@@ -165,8 +167,12 @@ const eliminarDelCarrito = (prodId) => {
             )
         }
         actualizarCarrito()
-      })
+    })
 }
 
 
 
+
+/* contenedorOfertas.addEventListener("click", () => {
+    window.location.href="../frontoffice/ofertasMes.html"
+  }) */

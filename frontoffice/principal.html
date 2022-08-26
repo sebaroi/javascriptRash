@@ -12,6 +12,10 @@
     <script defer src="../frontoffice/js/main.js"></script>
     <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
     <!-- JavaScript Bundle with Popper -->
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style/estilo.css">
@@ -111,10 +115,11 @@
                         <div id="navbar-search-autocomplete" class="form-outline">
                             <input type="search" id="form1" class="form-control" />
                         </div>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
+<!--                     <i class="fa-solid fa-user"></i> -->
                     <button id="botonCarrito">
                         <i class="fas fa-shopping-cart"><p id="contadorCarrito">0</p></i></button>
                 </div>
@@ -190,7 +195,7 @@
                     <div><a href="./pages/auricularesGamin.html"><img src="../imagenes/AURICULARES-GAMINGchico.jpg" alt="Auriculares"></a></div>
                 </article>
                 <article class="marca-main">
-                    <div><a href="./pages/ofertasMes.html"><img src="../imagenes/ofertasdelmeschico.jpg" alt="Ofertas"></a></div>
+                    <div><a href="../frontoffice/ofertaMes.html"><img src="../imagenes/ofertasdelmeschico.jpg" alt="Ofertas"></a></div>
                 </article>
             </seccion>
         </div>
@@ -198,11 +203,62 @@
 
 
 
-        <main>
+    <main>
             <div class="row g-3" id="contenedorProductos">
                 <br>
             </div>
+
+
+            <div class="row g-3" id="contenedorPerifericos">
+                <h2>Accesorios y perifericos</h2>
+                <br>
+            </div>
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="textoModal" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="textoModal">LOGIN</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="username" required="required">
+                <br>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="password" required="required">
+                    <br>
+                </div>
+                <div class="form-group" id=" mod">
+                    <button type="button" id="botonLog" class="btn btn-primary">Ingresar</button><button type="button" id="botonLog" class="btn btn-primary">Registrate</button>        
+             <!--    </div> -->
+
+          <!--       <div class="form-group"> -->
+       
+                </div> 
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#">Olvidaste la clave?</a>
+                        <a href="#">Todavia no estas registrado?</a>
+         <!--  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+        
+           
+        
+
     </main>
+
     <div class="modal-contenedor">
         <div class="modal-carrito">
             <h3>Carrito</h3>
@@ -241,75 +297,9 @@
         <div class="container">
             <div class="row g-3 w-100">
                 <h2>ACCESORIOS Y PERIFERICOS</h2>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="marcoProducto">
-                        <div class="imagenProducto">
-                            <a href="./pages/accMouse.html"><img src="./imagenes/mouse1.webp" alt="mouse"></a>
-                        </div>
-                        <div class="textoProducto">
-                            <p>MOUSE REDRAGON CPBRA M711-FPS BLACK</p>
-                            <p>$4.999-</p>
-                            <hr>
-                            <div class="botonComprar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <button class="button">COMPRAR</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="marcoProducto">
-                        <div class="imagenProducto">
-                            <a href="./pages/accCam.html"><img src="./imagenes/webcam3-2.webp" alt="webcam"></a>
-                        </div>
-                        <div class="textoProducto">
-                            <p>WEB CAM USB GENIUS ECAM 8000</p>
-                            <p>$9.999-</p>
-                            <hr>
-                            <div class="botonComprar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <button class="button">COMPRAR</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="marcoProducto">
-                        <div class="imagenProducto">
-                            <a href="./pages/accAuris.html"><img src="./imagenes/auris1.webp" alt="auriculares"></a>
-                        </div>
-                        <div class="textoProducto">
-                            <p>HYPERX CLOUD STINGER CORE</p>
-                            <p>$7.999-</p>
-                            <br>
-                            <hr>
-                            <div class="botonComprar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <button class="button">COMPRAR</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="marcoProducto">
-                        <div class="imagenProducto">
-                            <a href="./pages/accLuzLed.html"><img src="./imagenes/luzled.webp" alt="luzUsb"></a>
-                        </div>
-                        <div class="textoProducto">
-                            <p>LUZ LED LAMPARA FLEXIBLE USB</p>
-                            <p>$799-</p>
-                            <br>
-                            <hr>
-                            <div class="botonComprar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <button class="button">COMPRAR</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <br><br><br><br>
-        <h2>TODO LO QUE BUSCAS EN UN SOLO LUGAR</h2>
+       <br><br><br><br>
+        <h2>TODO LO QUE BUSCAS EN UN SOLO LUGAR</h2> -->
 
         <div class="row w-100">
             <div class="col-lg-4"><a href="./pages/pcEscrPlacasVideo.html"><img src="../imagenes/placas.jpg"

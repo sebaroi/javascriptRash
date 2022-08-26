@@ -18,6 +18,7 @@ function cargarDatosProductos(e)
         precio : Number(document.getElementById("valor").value),
         descripcion : document.getElementById("descri").value,
         stock : Number(document.getElementById("cantidad").value),
+        posicion : document.getElementById("posicion").value,
         imagen : document.getElementById("imagen").value
         }
     
@@ -29,23 +30,4 @@ function cargarDatosProductos(e)
     window.location.href="../../backoffice/index.html"
     
 }
-
-
-
-
-
-function modificar () {
-    window.location.href="../backoffice/modificarProducto.html"
-    const cate = document.getElementById("cate").value;
-    const nombre = document.getElementById("nombre").value;
-    const valor = document.getElementById("valor").value;
-    const descri = document.getElementById("descri").value;
-    const cantidad = document.getElementById("cantidad").value;
-    const imag = document.getElementById("imagen").value;
-    catalogoProdu.modificarProdu(idmodificar, cate, nombre, valor, descri, cantidad, imag)
-    }
-
-
-
-
 

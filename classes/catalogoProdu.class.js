@@ -5,18 +5,14 @@ class CatalogoProdu {
     }
 
     
-    agregarProd(producto){
+/*     agregarProd(producto){
         this.productos.push(producto)
         alert("Producto ingresado con Éxito")
     }
-
-    listarProdu(){
-        this.productos.forEach((producto) => {
-            console.log("Item",producto);
-    })
+ */
 }
 
-buscarProdu (nombreABuscar){
+/* buscarProdu (nombreABuscar){
     let produEncontrado = this.productos.some((producto) =>
     producto.sku==(nombreABuscar))
 
@@ -30,10 +26,10 @@ buscarProdu (nombreABuscar){
         alert("No existe el producto")
     }
 }
+ */
 
 
-
-modificarProdu(produABuscar, id, categoria, nombreProdu, precio, descripcion, stock, imagen)
+/* modificarProdu(produABuscar, id, categoria, nombreProdu, precio, descripcion, stock, imagen)
 {
     let busca = this.productos.find((producto) =>
         producto.sku==(produABuscar))
@@ -54,6 +50,6 @@ modificarProdu(produABuscar, id, categoria, nombreProdu, precio, descripcion, st
 }
 
 }
-
+ */
 
 

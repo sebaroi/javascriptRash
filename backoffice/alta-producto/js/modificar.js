@@ -31,7 +31,8 @@ function modificarProducto(){
             document.getElementById("nombre").value = modificarProducto.nombreProdu
             document.getElementById("valor").value = modificarProducto.precio            
             document.getElementById("descri").value += modificarProducto.descripcion           
-            document.getElementById("cantidad").value = modificarProducto.stock            
+            document.getElementById("cantidad").value = modificarProducto.stock   
+            document.getElementById("posicion").value = modificarProducto.posicion          
             document.getElementById("imagen").value = modificarProducto.imagen      
             localStorage.setItem('productos',  JSON.stringify(productos))      
           } else {
@@ -63,6 +64,7 @@ function modificarProd(e)
         precio : Number(document.getElementById("valor").value),
         descripcion : document.getElementById("descri").value,
         stock : Number(document.getElementById("cantidad").value),
+        posicion: document.getElementById("posicion").value,
         imagen : document.getElementById("imagen").value
         }
         }
