@@ -1,5 +1,8 @@
-
-
+const usuarios = [
+    {usernameLogin: "admin", passwordLogin: "admin"},
+    {usernameLogin: "test", passwordLogin: "clavetest123"},
+    {usernameLogin: "roco4080", passwordLogin: "telefono123"},
+  ]
 
 const categorias = ["placas de Video", "mother", "Notebooks", "monitores" ]
 const nodoPrincipal = document.getElementById("contenedorProductos")
@@ -176,3 +179,105 @@ const eliminarDelCarrito = (prodId) => {
 /* contenedorOfertas.addEventListener("click", () => {
     window.location.href="../frontoffice/ofertasMes.html"
   }) */
+
+/* -------------------------------para el login------------------- */
+
+
+if(localStorage.getItem('usuarios') == null || localStorage.getItem('usuarios') == 'null')
+    localStorage.setItem('usuarios',  JSON.stringify(usuarios))
+
+    const usuarioLocalStorage=  JSON.parse(localStorage.getItem('productos'));
+    usuarioLocalStorage.forEach((usuarios)=>{
+        if (username == usuarios.usernameLogin){
+            alert('exito.')
+        }
+    })
+botonLogin ()
+
+function botonLogin(){
+    const btn = document.getElementById("botonIngresar")
+    btn.addEventListener("click", ()=>{
+        procesoLogin()
+    })
+}
+
+
+
+function procesoLogin(){
+    
+const username = document.getElementById("usernameLogin").value;
+const password = document.getElementById("passwordLogin").value;
+    const usuarioLocalStorage=  JSON.parse(localStorage.getItem('usuarios'));
+    usuarioLocalStorage.forEach((usuarios)=>{
+        if (username == usuarios.usernameLogin){
+            alert('exito.')
+        }
+    })
+    localStorage.setItem('usuarios',  JSON.stringify(usuarios))
+    
+/*     if(username == usuarios.usernameLogin && password == usuarios.passwordLogin) {
+        alert('exito.');
+        window.location.href="./principal.html"  
+    }else {
+        alert('ERROR.');
+    } */
+}
+
+
+/* function mostrarBackoffice(){
+    window.location.href="../backoffice/index.html"
+}
+ */
+
+
+
+
+
+
+
+
+function guardado (){
+    localStorage.setItem('nombre', usernameLogin.value)
+    localStorage.setItem('pass', passwordLogin.value)
+}
+
+/* 
+
+    const botonIngresar = document.getElementById("botonIngresar")
+    botonIngresar.addEventListener("click", ()=>{
+        procesoLogin()
+    })
+
+
+
+function procesoLogin(){
+    guardado ()
+    const storeNombre = localStorage.getItem('usernameLogin')
+    const storePass = localStorage.getItem('passwordLogin')
+
+    const usernameLogin = document.getElementById("usernameLogin").value;
+    const passwordLogin = document.getElementById("passwordLogin").value;
+    if(usernameLogin.value == storeNombre && passwordLogin.value == storePass) {
+        alert('exito.');
+        window.location.href="./principal.html"  
+    }else {
+        alert('ERROR.');
+    }
+} */
+
+
+/* let nombreLocalStorage = localStorage.getItem('')
+let passLocalStorage = localStorage.getItem('') */
+
+/* Botoningresar.addEventListener('input', () => {
+    const storeNombre = localStorage.getItem('usernameLogin')
+    const storePass = localStorage.getItem('passwordLogin')
+
+    const usernameLogin = document.getElementById("usernameLogin").value;
+    const passwordLogin = document.getElementById("passwordLogin").value;
+    if(usernameLogin.value == storeNombre && passwordLogin.value == storePass) {
+        alert('exito.');
+    }else {
+        alert('ERROR.');
+    }
+    )} */

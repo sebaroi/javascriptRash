@@ -11,6 +11,8 @@ const productos = [
 ]
 
 
+
+
 const nodoPrincipal = document.getElementById("contenedorProductos")
 const cantidad = document.getElementById('cantidad')
 const precioTotal = document.getElementById('precioTotal')
@@ -26,7 +28,6 @@ pantallaPrincipal.addEventListener("click", () => {
 botonProd.addEventListener("click", ()=>{
     window.location.href="../backoffice/alta-producto/altaproducto.html"
 })
-
 
 
 

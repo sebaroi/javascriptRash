@@ -473,16 +473,6 @@ p {
 }
 
 
-.imagenModal{
- 
-height: 40%;
-width: 40%; 
-}
-
-
-
-
-
 
 .imagenUsuario{
   object-fit: contain;
@@ -505,6 +495,8 @@ width: 40%;
     visibility: hidden;
 } */
 
+
+
 #botonLog{
   justify-content: space-between;
   align-items: center;
@@ -518,8 +510,9 @@ width: 40%;
 #mod{
   
   align-items: center;
-  display: flex;
+  display:flexbox;
   justify-content: center;
+  align-items: center;
 }
 
 .textoModal{
