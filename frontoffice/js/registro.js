@@ -3,56 +3,54 @@ debugger
 
 const usuarios = [
     {usernameLogin: "admin", passwordLogin: "admin", userEmailLogin:"admin@gmail.com" },
-    {usernameLogin: "test", passwordLogin: "clavetest123",userEmailLogin:"test@hotmail.com" },
+    {usernameLogin: "test", passwordLogin: "clavetest123", userEmailLogin:"test@hotmail.com" },
     {usernameLogin: "roco4080", passwordLogin: "telefono123", userEmailLogin:"rocco48@hotmail.com"},
-  ]
-/* 
-    const btn = document.getElementById("botonRegistrarse")
-    btn.addEventListener("click", ()=>{
-        window.location.href="../frontoffice/registro.html"
-        registrarse()
-    }) */
+]
 
 
 let nuevoUsuario=[]
+let nomUsuario=""
+let passUsuario=""
+let repetirpassUsuario=""
+let userEmail=""
+
 
 if (localStorage.getItem('usuarios') == null || localStorage.getItem('usuarios') == 'null')
-    localStorage.setItem('usuarios',  JSON.stringify(usuarios))
-nuevoUsuario= localStorage.setItem('usuarios',  JSON.stringify(usuarios))
-
-
+localStorage.setItem('usuarios',  JSON.stringify(usuarios))
 
 function registrarse (){
-    nomUsuario = document.getElementById ("usernameLogin").value;
-    passUsuario = document.getElementById ("passwordLogin").value;
-    repetirpassUsuario = document.getElementById ("repetirpasswordLogin").value;
-    userEmail = document.getElementById ("userEmailLogin").value;
+   // e.preventDefault()
+    let nuevo = {
+        usernameLogin : document.getElementById ("usernameLogin").value,
+        passwordLogin : document.getElementById ("passwordLogin").value,
+        repetirpasswordLogin : document.getElementById ("repetirpasswordLogin").value,
+        userEmailLogin : document.getElementById ("userEmailLogin").value
+    }
 
-
-
-    if (nomUsuario == ""){
+    if (nuevo.nomUsuario == ""){
         alert("Nombre de usuario requerido.");
         return ;
     }
-    else if (userEmail == ""){
+    else if (nuevo.userEmail == ""){
         alert("Mail requerido.");
         return ;
     }
-    else if (passUsuario == ""){
+    else if (nuevo.passUsuario == ""){
         alert("Password requerido.");
         return ;
     }
-    else if (repetirpassUsuario == ""){
+    else if (nuevo.repetirpassUsuario == ""){
         alert("Password requerido.");
         return ;
     }
-    else if ( passUsuario != repetirpassUsuario ){
+    else if ( nuevo.passUsuario != nuevo.repetirpassUsuario ){
         alert("La clave no coincide");
         return;
     }
-     else if(usuarios.indexOf(email) == -1){
-        emailArray.push(email);
-        passwordArray.push(password);
+    else {
+    let nuevoUsuario= JSON.parse(localStorage.getItem('usuarios'));
+    nuevoUsuario.push(nuevo)
+    localStorage.setItem('usuarios',  JSON.stringify( nuevoUsuario))
 
         alert(nomUsuario + "  Registro completo, Ya puede ingresar");
 
@@ -60,30 +58,27 @@ function registrarse (){
         document.getElementById ("passwordLogin").value="";
         document.getElementById ("repetirpasswordLogin").value="";
         document.getElementById ("userEmailLogin").value="";
-    }
-    else{
+    } 
+    window.location.href='principal.html'
+/*     else{
         alert(nomUsuario + " El usuario ya existe.");
         return ;
-    } 
+    }  */
+
 }
 
 
-//nuevoUsuario = usuarios
-//registro()
+let encontrado = false
+let i = 0
 
 
- /*   if(passUsuario ===repetirpassUsuario && legales==true){
-    nuevoUsuario = localStorage setItem('usuarios')
+const btn = document.getElementById("registrar")
+btn.addEventListener("click", ()=>{
+    registrarse ()
 
-   }alert("el password es diferente // marque la casilla de acpetacion") */
-   let encontrado = false
-   let i = 0
+})
 
-
-    const btn = document.getElementById("registrar")
-    btn.addEventListener("click", ()=>{
-
-        while (!encontrado && i < usuarios.length ){
+ /*        while (!encontrado && i < usuarios.length ){
             if (usuarios[i].usernameLogin==nomUsuario){
                 encontrado = true
                 alert("usuario existente, agregue otro usuario")
@@ -117,3 +112,4 @@ nuevoUsuario.localStorage.setItem('usuarios')
        // registrarse()
     })
 
+ */

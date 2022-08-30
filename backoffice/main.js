@@ -10,9 +10,6 @@ const productos = [
   {sku: 9, categoria: "teclado", nombreProdu: "Teclado gamer Redragon Dragonborn K630", precio: 7.500, descripcion: "Función antighosting incorporada Tipo de teclado: mecánico.", stock: 4, posicion: "segundo", imagen:"https://http2.mlstatic.com/D_NQ_NP_897779-MLA46504109530_062021-O.webp" },
 ]
 
-
-
-
 const nodoPrincipal = document.getElementById("contenedorProductos")
 const cantidad = document.getElementById('cantidad')
 const precioTotal = document.getElementById('precioTotal')

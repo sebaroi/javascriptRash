@@ -76,10 +76,6 @@ prodLocalStorage.forEach((producto)=>{
     }
 
 
-
-
-
-
     let element= `agregar${producto.sku}`
 
     const boton = document.getElementById(element)
@@ -91,7 +87,7 @@ prodLocalStorage.forEach((producto)=>{
 
 let productosEnCarrito=0
 let existe
-// let newcar= JSON.parse(localStorage.getItem('carrito'));
+
 function agregarAlCarrito (producto)  {
 const estaEnElCarrito = carrito.find(carrito => carrito.sku == producto.sku)
     if (!estaEnElCarrito) {
@@ -181,10 +177,12 @@ const eliminarDelCarrito = (prodId) => {
 
 /* -------------------------------para el login------------------- */
 
+debugger
+
 let nomUsuario = ""
 let passUsuario =""
-repetirpassUsuario =""
-userEmail =""
+let repetirpassUsuario =""
+let userEmail =""
 
 
 if(localStorage.getItem('usuarios') == null || localStorage.getItem('usuarios') == 'null')
@@ -203,18 +201,14 @@ function botonLogin(){
 }
 
 function procesoLogin(){
+    localStorage.setItem('usuarios',  JSON.stringify( usuarios))
 
-/*         localStorage.setItem('username', usernameLogin) = nomUsuario
-        localStorage.setItem('password', passwordLogin) = passUsuario */
-
-
-/*         guardado() */
 do {
-     nomUsuario = document.getElementById("usernameLogin").value;
-     passUsuario = document.getElementById("passwordLogin").value;
+    nomUsuario = document.getElementById("usernameLogin").value;
+    passUsuario = document.getElementById("passwordLogin").value;
     if (nomUsuario ==="" || passUsuario===""){
         alert("Ingrese los datos correctamente")
-        botonLogin()
+        procesoLogin()
     }
     }
 while ((nomUsuario ==="" || passUsuario===""))
