@@ -45,26 +45,24 @@
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <form action="" class="formulario" autocomplete="off">
-                <div class="input-group flex-nowrap">
+<!--                 <div class="input-group flex-nowrap">
                     <span class="input-group-text">ID</span>
                     <input type="text"  id="id" class="form-control" placeholder="id" aria-label="nombre" aria-describedby="addon-wrapping">
-                </div>
+                </div> -->
                 <br>
 
                 <div>
                     <select name="categorias" id="cate" required class="form-select" aria-label="Default select example">
-                        <option selected disabled value="#"> Seleccione una posicion para mostrar el producto</option>
+                        <option selected disabled value="#"> Seleccione una CATEGORIA</option>
                         <option value="categoria"> MOTHER </option>
+                        <option value="categoria"> MONITOR </option>
                         <option value="categoria"> PLACA DE VIDEO </option>
                         <option value="categoria"> NOTEBOOK </option>
                         <option value="categoria"> SILLA GAMMER </option>
-                        <option value="categoria"> PERIFERICOS & ACCESORIOS </option>
+                        <option value="categoria"> PC ARMADAS </option>
+                        <option value="categoria"> ACCESORIOS & PERIFERICOS </option>
                     </select>     
                 </div>
-<!--                 <div class="input-group flex-nowrap">
-                    <span class="input-group-text" >Categoria</span>
-                    <input type="text" id="cate" class="form-control" placeholder="Categoria" aria-label="nombre" aria-describedby="addon-wrapping">
-                </div> -->
                 <br>
                 <div class="input-group flex-nowrap">
                     <span class="input-group-text" >Nombre</span>
@@ -91,15 +89,11 @@
                 <div>
                     <select name="posiciones" id="posicion" required class="form-select" aria-label="Default select example">
                         <option selected disabled value="#"> Seleccione una posicion para mostrar el producto</option>
-                        <option value="primero" > Central superior </option>
-                        <option value="segundo"> Central inferior </option>
+                        <option value="primero" > Area Productos </option>
+                        <option value="segundo"> Area Accesorios y Perifericos </option>
                         <option value="tercero"> Ofertas del mes </option>
                     </select>     
                 </div>
-<!--                 <div class="input-group flex-nowrap">
-                    <span class="input-group-text" >Posicion</span>
-                    <input type="text" id="posicion" class="form-control" placeholder="Posicion" aria-label="nombre" aria-describedby="addon-wrapping">
-                </div> -->
 
                 <br>
                 <div class="input-group flex-nowrap">
@@ -107,18 +101,7 @@
                     <input type="text" id="imagen" class="form-control" placeholder="Imagen" aria-label="nombre" aria-describedby="addon-wrapping">
                 </div>
                 <br>
-            <!--    <div class="file-input-img">
-                        <input type="file" name="imagenProducto" required id="file-input" accept="image/png, image/jpg, image/gif, image/jpeg">
-                        <div onclick="document.getElementById('file-input').click()" id="boton-file-input"> Subir archivo <i class="fa-solid fa-camera-retro"></i></div>   
-                </div>  
-                <br>
-         //     <div class="file-input-img">
-        //            <input type="file" name="imagenProducto" required id="file-input" accept="image/png, image/jpg, image/gif, image/jpeg">
-         //           <div onclick="document.getElementById('file-input').click()" id="boton-file-input"> Subir archivo <i class="fa-solid fa-camera-retro"></i></div>   
-         //       </div>                
-        -->
-
-
+        
                 <div id = "botonCrearProd" class="botonComprar" >
                     <button id= "botonAgregar" class="button">Crear producto</button>
                 </div>

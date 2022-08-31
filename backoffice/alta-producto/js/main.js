@@ -10,9 +10,12 @@ botonAgregar.addEventListener('click', (e) => {
 
 function cargarDatosProductos(e) 
 {
+    let vdsdal= JSON.parse(localStorage.getItem('productos'));
+    let ultimoProd = vdsdal.pop()
+    vdsdal.push(ultimoProd)
     e.preventDefault()
     let nuevo = { 
-        sku : Number (document.getElementById("id").value),
+        sku : ultimoProd.sku +1,
         categoria : document.getElementById("cate").value,
         nombreProdu : document.getElementById("nombre").value,
         precio : Number(document.getElementById("valor").value),
@@ -23,7 +26,6 @@ function cargarDatosProductos(e)
         }
     
 
-    let vdsdal= JSON.parse(localStorage.getItem('productos'));
     vdsdal.push(nuevo)
     localStorage.setItem('productos',  JSON.stringify( vdsdal))
 

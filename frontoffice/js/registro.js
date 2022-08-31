@@ -1,12 +1,12 @@
 debugger
 
-
+/*
 const usuarios = [
     {usernameLogin: "admin", passwordLogin: "admin", userEmailLogin:"admin@gmail.com" },
     {usernameLogin: "test", passwordLogin: "clavetest123", userEmailLogin:"test@hotmail.com" },
     {usernameLogin: "roco4080", passwordLogin: "telefono123", userEmailLogin:"rocco48@hotmail.com"},
 ]
-
+*/
 
 let nuevoUsuario=[]
 let nomUsuario=""
@@ -15,8 +15,8 @@ let repetirpassUsuario=""
 let userEmail=""
 
 
-if (localStorage.getItem('usuarios') == null || localStorage.getItem('usuarios') == 'null')
-localStorage.setItem('usuarios',  JSON.stringify(usuarios))
+//if (localStorage.getItem('usuarios') == null || localStorage.getItem('usuarios') == 'null')
+//localStorage.setItem('usuarios',  JSON.stringify(usuarios))
 
 function registrarse (){
    // e.preventDefault()

@@ -7,6 +7,7 @@ const usuarios = [
 const categorias = ["placas de Video", "mother", "Notebooks", "monitores" ]
 const nodoPrincipal = document.getElementById("contenedorProductos")
 const principalPerif = document.getElementById("contenedorPerifericos")
+const ofertas = document.getElementById("contenedorOfertas")
 const contenedorCarrito = document.getElementById('carritoContenedor')
 const botonVaciar = document.getElementById('vaciarCarrito')
 const contadorCarrito = document.getElementById('contadorCarrito')
@@ -73,8 +74,9 @@ prodLocalStorage.forEach((producto)=>{
         nodoPrincipal.appendChild(divProducto);
     }else if (producto.posicion =='segundo'){
         principalPerif.appendChild(divProducto);
+    }else if (producto.posicion =='tercero'){
+        ofertas.appendChild(divProducto)
     }
-
 
     let element= `agregar${producto.sku}`
 
@@ -171,13 +173,8 @@ const eliminarDelCarrito = (prodId) => {
 
 
 
-/* contenedorOfertas.addEventListener("click", () => {
-    window.location.href="../frontoffice/ofertasMes.html"
-  }) */
-
 /* -------------------------------para el login------------------- */
 
-debugger
 
 let nomUsuario = ""
 let passUsuario =""
@@ -190,40 +187,35 @@ if(localStorage.getItem('usuarios') == null || localStorage.getItem('usuarios') 
 
 
 
-botonLogin ()
-
-function botonLogin(){
     const btn = document.getElementById("botonIngresar")
     btn.addEventListener("click", ()=>{
         procesoLogin()
-
     })
-}
+
+
 
 function procesoLogin(){
-    localStorage.setItem('usuarios',  JSON.stringify( usuarios))
 
 do {
     nomUsuario = document.getElementById("usernameLogin").value;
     passUsuario = document.getElementById("passwordLogin").value;
     if (nomUsuario ==="" || passUsuario===""){
         alert("Ingrese los datos correctamente")
-        procesoLogin()
+        botonLogin()
     }
     }
 while ((nomUsuario ==="" || passUsuario===""))
 
+arraynuevo = JSON.parse(localStorage.getItem('usuarios'))
 
 let encontrado = false
 let i = 0
-while (!encontrado && i < usuarios.length ){
-    if (usuarios[i].usernameLogin==nomUsuario && usuarios[i].passwordLogin==passUsuario){
+while (!encontrado && i < arraynuevo.length ){
+    if (arraynuevo[i].usernameLogin==nomUsuario && arraynuevo[i].passwordLogin==passUsuario){
         encontrado = true
-        alert("usuario corrrecto")
     } 
     else {
         i++   
-        alert("usuario y contrasela incorretcto")
     }
 }
 
@@ -231,18 +223,19 @@ if (encontrado){
     if (nomUsuario== "admin"){
         window.location.href="../backoffice/index.html"
     } else {
-        window.location.href="./frontoffice/principal.html"
+        window.location.href="../frontoffice/principal.html"
     }
     
 } else {
+    alert("Nombre de usuario o contraseña incorrecto")
     botonLogin()
 }
 }
 
 
-/* /* /* /* -------------------------------para el registro------------------- 
-debugger
-*/
+/* /* /* /* -------------------------------para el registro------------------- */
+
+
 botonRegistro ()
 
 
@@ -254,60 +247,3 @@ function botonRegistro(){
     })
 }
 
-/*
-let nuevoUsuario=[]
-
-if (localStorage.getItem('usuarios') == null || localStorage.getItem('usuarios') == 'null')
-    localStorage.setItem('usuarios',  JSON.stringify(usuarios))
-nuevoUsuario= localStorage.setItem('usuarios',  JSON.stringify(usuarios))
-
-
-
-function registrarse (){
-    nomUsuario = document.getElementById ("usernameLogin").value;
-    passUsuario = document.getElementById ("passwordLogin").value;
-    repetirpassUsuario = document.getElementById ("repetirpasswordLogin").value;
-    userEmail = document.getElementById ("userEmailLogin").value;
-
-
-
-nuevoUsuario = usuarios
-//registro()
-}
-
-
-
-       
-
- /*   if(passUsuario ===repetirpassUsuario && legales==true){
-    nuevoUsuario = localStorage setItem('usuarios')
-
-   }alert("el password es diferente // marque la casilla de acpetacion") 
-
-
-   function registro(){
-    const btn = document.getElementById("registrar")
-    btn.addEventListener("click", ()=>{
-
-        if (passUsuario ==""){
-    Swal.fire('Ingrese su password')
-}
-if (userEmail ==""){
-    Swal.fire('Re-Ingrese su password')
-}
-if (userEmail ==""){
-    Swal.fire('Ingrese su Email')
-}
-
-        if (nomUsuario ==="" || passUsuario==="" || repetirpassUsuario==="" || userEmail===""){
-            alert("Ingrese los datos correctamente")
-            registrarse()
-        }
-alert("datos registrados")
-nuevoUsuario.localStorage.setItem('usuarios')
-
-        window.location.href="../frontoffice/principal.html"
-       // registrarse()
-    })
-}
-*/
