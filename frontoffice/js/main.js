@@ -15,7 +15,7 @@ const cantidad = document.getElementById('cantidad')
 const precioTotal = document.getElementById('precioTotal')
 const cantidadTotal = document.getElementById('cantidadTotal')
 const botonProd = document.getElementById('botonProd')
-/* const oferta = document.getElementById('oferta') */
+const buscar = document.getElementById('buscar')
 
 
 let carrito = []
@@ -98,13 +98,6 @@ const estaEnElCarrito = carrito.find(carrito => carrito.sku == producto.sku)
         const index = carrito.indexOf(estaEnElCarrito)
         carrito[index].cantidad++
         productosEnCarrito++
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Your work has been saved',
-            showConfirmButton: false,
-            timer: 1500
-        })
     }
     console.log(carrito);
     localStorage.setItem('carrito',  JSON.stringify(carrito))
@@ -128,6 +121,8 @@ const actualizarCarrito = () => {
         const div = document.createElement('div')
         div.className = ('productoEnCarrito')
         div.innerHTML = `
+        <img src="${producto.imagen} " alt="">
+/*         <img>${producto.imagen} </img> */
         <p>${producto.nombre}</p>
         <p>Precio:$ ${producto.precio}</p>
         <p>Cantidad: <span id="cantidad">${producto.cantidad} </span></p>
@@ -171,79 +166,31 @@ const eliminarDelCarrito = (prodId) => {
 }
 
 
+/* -----------BUSCAR productos--------- */
+/* paraBuscar = document.getElementById("paraBuscar").value;
 
+productos.find((productos.nombreProdu) =>{
 
-/* -------------------------------para el login------------------- */
+})
+ */
 
+/* const carrLocalStorage=  JSON.parse(localStorage.getItem('carrito'));
+    contenedorCarrito.innerHTML=""
+    carrLocalStorage.forEach((producto) => {
 
-let nomUsuario = ""
-let passUsuario =""
-let repetirpassUsuario =""
-let userEmail =""
+        const div = document.createElement('div')
+        div.className = ('productoEnCarrito')
+        div.innerHTML = `
+        img
+        <p>${producto.nombre}</p>
+        <p>Precio:$ ${producto.precio}</p>
+        <p>Cantidad: <span id="cantidad">${producto.cantidad} </span></p>
+        <button onclick="eliminarDelCarrito(${producto.sku})"class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
 
-
-if(localStorage.getItem('usuarios') == null || localStorage.getItem('usuarios') == 'null')
-    localStorage.setItem('usuarios',  JSON.stringify(usuarios))
-
-
-
-    const btn = document.getElementById("botonIngresar")
-    btn.addEventListener("click", ()=>{
-        procesoLogin()
+        `
+        contenedorCarrito.appendChild(div)
+        localStorage.setItem('carrito',  JSON.stringify(carrLocalStorage))
     })
-
-
-
-function procesoLogin(){
-
-do {
-    nomUsuario = document.getElementById("usernameLogin").value;
-    passUsuario = document.getElementById("passwordLogin").value;
-    if (nomUsuario ==="" || passUsuario===""){
-        alert("Ingrese los datos correctamente")
-        botonLogin()
-    }
-    }
-while ((nomUsuario ==="" || passUsuario===""))
-
-arraynuevo = JSON.parse(localStorage.getItem('usuarios'))
-
-let encontrado = false
-let i = 0
-while (!encontrado && i < arraynuevo.length ){
-    if (arraynuevo[i].usernameLogin==nomUsuario && arraynuevo[i].passwordLogin==passUsuario){
-        encontrado = true
-    } 
-    else {
-        i++   
-    }
-}
-
-if (encontrado){
-    if (nomUsuario== "admin"){
-        window.location.href="../backoffice/index.html"
-    } else {
-        window.location.href="../frontoffice/principal.html"
-    }
-    
-} else {
-    alert("Nombre de usuario o contraseña incorrecto")
-    botonLogin()
-}
-}
-
-
-/* /* /* /* -------------------------------para el registro------------------- */
-
-
-botonRegistro ()
-
-
-function botonRegistro(){
-    const btn = document.getElementById("botonRegistrarse")
-    btn.addEventListener("click", ()=>{
-        window.location.href="../frontoffice/registro.html"
-        registrarse()
-    })
-}
-
+    contadorCarrito.innerText = carrLocalStorage.length
+    precioTotal.innerText = carrLocalStorage.reduce((acc, producto) => acc+ producto.precio * producto.cantidad, 0)
+ */
