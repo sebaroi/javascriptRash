@@ -55,10 +55,8 @@ function registrarse (){
 let encontrado = false
 let i = 0
 
-
 const btn = document.getElementById("registrar")
 btn.addEventListener("click", ()=>{
     registrarse ()
-
 })
 

@@ -1,5 +1,4 @@
 
-
 window.addEventListener("load",()=>{
 let ingresar= document.getElementById("ingresar")
 let logout= document.getElementById("logout")
@@ -13,7 +12,8 @@ if (estoyLogueado){
     logout.style.display = 'none';
 /*     document.getElementById("botonCarrito").style.display = 'none' */
 }
-    
+
+/* -------------------------------para el logout------------------- */
 logout.addEventListener("click",()=>{
     sessionStorage.removeItem('usuarioLog')
     localStorage.removeItem('carrito')
@@ -100,3 +100,16 @@ function botonRegistro(){
     })
 }
 
+
+
+finalizarCompra.addEventListener('click', () => {
+if (encontrado == false){
+    alert("Usted necesita estar logueado")
+
+}
+/* 
+    window.location.href='finalizarCompra.html'
+     if (encontrado){
+        window.location.href='finalizarCompra.html'
+    }alert("necesita loguearse") */
+    })

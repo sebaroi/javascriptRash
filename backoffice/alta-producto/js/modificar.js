@@ -26,7 +26,6 @@ function modificarProducto(){
             })
 
             aModificar = modificarProducto            
-            document.getElementById("id").value = modificarProducto.sku
             document.getElementById("cate").value = modificarProducto.categoria            
             document.getElementById("nombre").value = modificarProducto.nombreProdu
             document.getElementById("valor").value = modificarProducto.precio            
@@ -58,7 +57,6 @@ function modificarProd(e)
     let modi = vdsdal.map(prod =>{
         if(prod.sku ==aModificar.sku){
       return prod = {
-        sku : Number (document.getElementById("id").value),
         categoria : document.getElementById("cate").value,
         nombreProdu : document.getElementById("nombre").value,
         precio : Number(document.getElementById("valor").value),

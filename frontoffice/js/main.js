@@ -2,7 +2,7 @@ const usuarios = [
     {usernameLogin: "admin", passwordLogin: "admin", userEmailLogin:"admin@gmail.com" },
     {usernameLogin: "test", passwordLogin: "clavetest123",userEmailLogin:"test@hotmail.com" },
     {usernameLogin: "roco4080", passwordLogin: "telefono123", userEmailLogin:"rocco48@hotmail.com"},
-  ]
+]
 
 const categorias = ["placas de Video", "mother", "Notebooks", "monitores" ]
 const nodoPrincipal = document.getElementById("contenedorProductos")
@@ -16,7 +16,7 @@ const precioTotal = document.getElementById('precioTotal')
 const cantidadTotal = document.getElementById('cantidadTotal')
 const botonProd = document.getElementById('botonProd')
 const buscar = document.getElementById('buscar')
-
+const finalizarCompra = document.getElementById('finalizarCompra')
 
 let carrito = []
 
@@ -121,8 +121,6 @@ const actualizarCarrito = () => {
         const div = document.createElement('div')
         div.className = ('productoEnCarrito')
         div.innerHTML = `
-        <img src="${producto.imagen} " alt="">
-/*         <img>${producto.imagen} </img> */
         <p>${producto.nombre}</p>
         <p>Precio:$ ${producto.precio}</p>
         <p>Cantidad: <span id="cantidad">${producto.cantidad} </span></p>
@@ -173,24 +171,17 @@ productos.find((productos.nombreProdu) =>{
 
 })
  */
+/* finalizarCompra.addEventListener('click', () => {
+if (usernameLogin===""){
+    alert("Usted necesita estar logueado")
+}
 
-/* const carrLocalStorage=  JSON.parse(localStorage.getItem('carrito'));
-    contenedorCarrito.innerHTML=""
-    carrLocalStorage.forEach((producto) => {
-
-        const div = document.createElement('div')
-        div.className = ('productoEnCarrito')
-        div.innerHTML = `
-        img
-        <p>${producto.nombre}</p>
-        <p>Precio:$ ${producto.precio}</p>
-        <p>Cantidad: <span id="cantidad">${producto.cantidad} </span></p>
-        <button onclick="eliminarDelCarrito(${producto.sku})"class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
-
-        `
-        contenedorCarrito.appendChild(div)
-        localStorage.setItem('carrito',  JSON.stringify(carrLocalStorage))
+    window.location.href='finalizarCompra.html'
+/*     if (encontrado){
+        window.location.href='finalizarCompra.html'
+    }alert("necesita loguearse")
     })
-    contadorCarrito.innerText = carrLocalStorage.length
-    precioTotal.innerText = carrLocalStorage.reduce((acc, producto) => acc+ producto.precio * producto.cantidad, 0)
  */
+
+
+

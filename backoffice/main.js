@@ -19,7 +19,6 @@ const productos = [
   {sku: 18, categoria: "Pc armadas", nombreProdu: "Pc Gamer Ryzen 3 4350g | 8gb |240 ssd con monitor 22´", precio: 74999, descripcion: "Pc para aprovechar", stock: 4, posicion: "tercero", imagen:"https://http2.mlstatic.com/D_NQ_NP_954583-MLA31512056604_072019-O.webp" },
   {sku: 19, categoria: "Monitor", nombreProdu: "Monitor curvo Samsung T55 C32T550 led 32´", precio: 81999, descripcion: "Exceletne calidad", stock: 4, posicion: "tercero", imagen:"https://http2.mlstatic.com/D_NQ_NP_768801-MLA49829797874_052022-O.webp" },
   {sku: 20, categoria: "Accesorios-Periferico", nombreProdu: "Auriculares gamer Redragon Lamia 2 lunar white", precio: 8795, descripcion: "Exceletne calidad", stock: 4, posicion: "tercero", imagen:"https://http2.mlstatic.com/D_NQ_NP_700257-MLA44366065265_122020-O.webp" },
-
 ]
 
 const nodoPrincipal = document.getElementById("contenedorProductos")
@@ -30,16 +29,7 @@ const botonProd = document.getElementById('botonProd')
 const pantallaPrincipal = document.getElementById('pantallaPrincipal') 
 const logout = document.getElementById('logout') 
 
-/* function borrarDatos(){
-  localStorage.removeItem("usernameLogin")
-  localStorage.removeItem("passwordLogin")
-  location.reload()
-  }
 
-logout.addEventListener("click", () => {
-  borrarDatos()
-  window.location.href="../../frontoffice/principal.html"
-}) */
 
 pantallaPrincipal.addEventListener("click", () => {
   window.location.href="../../frontoffice/principal.html"
@@ -48,7 +38,6 @@ pantallaPrincipal.addEventListener("click", () => {
 botonProd.addEventListener("click", ()=>{
     window.location.href="../backoffice/alta-producto/altaproducto.html"
 })
-
 
 
 const modificar = document.getElementById('modificar')
@@ -60,7 +49,7 @@ modificar.addEventListener('click', () => {
 
 if(localStorage.getItem('productos') == null || localStorage.getItem('productos') == 'null')
     localStorage.setItem('productos',  JSON.stringify(productos))
- 
+
 const prodLocalStorage=  JSON.parse(localStorage.getItem('productos'));
 prodLocalStorage.forEach((producto)=>{
     const divProducto = document.createElement("div")

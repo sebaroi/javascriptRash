@@ -25,7 +25,6 @@ function cargarDatosProductos(e)
         imagen : document.getElementById("imagen").value
         }
     
-
     vdsdal.push(nuevo)
     localStorage.setItem('productos',  JSON.stringify( vdsdal))
 
