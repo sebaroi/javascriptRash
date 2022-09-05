@@ -17,23 +17,24 @@ function registrarse (){
     }
 
     if (nuevo.nomUsuario == ""){
-        alert("Nombre de usuario requerido.");
+        Swal.fire('Nombre de usuario requerido.')
         return ;
     }
     else if (nuevo.userEmail == ""){
-        alert("Mail requerido.");
+        Swal.fire('Mail requerido.')
         return ;
     }
     else if (nuevo.passUsuario == ""){
-        alert("Password requerido.");
+        Swal.fire('Password requerido.')
+
         return ;
     }
     else if (nuevo.repetirpassUsuario == ""){
-        alert("Password requerido.");
+        Swal.fire('Password requerido.')
         return ;
     }
     else if ( nuevo.passUsuario != nuevo.repetirpassUsuario ){
-        alert("La clave no coincide");
+        Swal.fire('La clave no coincide')
         return;
     }
     else {

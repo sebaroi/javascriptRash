@@ -50,7 +50,7 @@ do {
     nomUsuario = document.getElementById("usernameLogin").value;
     passUsuario = document.getElementById("passwordLogin").value;
     if (nomUsuario ==="" || passUsuario===""){
-        alert("Ingrese los datos correctamente")
+        Swal.fire('Ingrese los datos correctamente')
         botonLogin()
     }
     }
@@ -101,15 +101,19 @@ function botonRegistro(){
 }
 
 
+//-------------------------para chequear que este logeado antes de avanzar con la compra
+let finalizar =document.getElementById("finalizarCompra")
 
-finalizarCompra.addEventListener('click', () => {
-if (encontrado == false){
-    alert("Usted necesita estar logueado")
-
-}
-/* 
+finalizar.addEventListener('click', () => {
+    let logueado = sessionStorage.getItem('usuarioLog')
+if (logueado){
     window.location.href='finalizarCompra.html'
-     if (encontrado){
-        window.location.href='finalizarCompra.html'
-    }alert("necesita loguearse") */
-    })
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Tenes que estar logueado para poder finalizar la compra.',
+            text: 'Logueate es rapidisimo!!!',
+
+          })
+    }
+})
