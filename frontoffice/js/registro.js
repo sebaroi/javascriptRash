@@ -1,4 +1,71 @@
 
+
+let nuevoUsuario=[]
+let nomUsuario=""
+let passUsuario=""
+let repetirpassUsuario=""
+let userEmail=""
+
+
+
+function registrarse (){
+    let nuevo = {
+        usernameLogin : document.getElementById ("usernameLogin").value,
+        passwordLogin : document.getElementById ("passwordLogin").value,
+        repetirpasswordLogin : document.getElementById ("repetirpasswordLogin").value,
+        userEmailLogin : document.getElementById ("userEmailLogin").value
+    }
+
+    if (nuevo.usernameLogin == ""){
+        Swal.fire('Nombre de usuario requerido.');
+        return ;
+    }
+    else if (nuevo.userEmailLogin == ""){
+        Swal.fire('Mail requerido.');
+        return ;
+    }
+    else if (nuevo.passwordLogin == ""){
+        Swal.fire('Password requerido.');
+        return ;
+    }
+    else if (nuevo.repetirpasswordLogin == ""){
+        Swal.fire('Password requerido.');
+        return ;
+    }
+    else if ( nuevo.passwordLogin != nuevo.repetirpasswordLogin ){
+        Swal.fire('La clave no coincide');
+        return;
+    }
+    else {
+    let nuevoUsuario= JSON.parse(localStorage.getItem('usuarios'));
+    nuevoUsuario.push(nuevo)
+    localStorage.setItem('usuarios',  JSON.stringify( nuevoUsuario))
+
+    Swal.fire('Felicitaciones, ya sos parte de esta gran familia')
+
+        document.getElementById ("usernameLogin").value="";
+        document.getElementById ("passwordLogin").value="";
+        document.getElementById ("repetirpasswordLogin").value="";
+        document.getElementById ("userEmailLogin").value="";
+    } 
+    window.location.href='../principal.html'
+}
+
+
+let encontrado = false
+let i = 0
+
+
+const btn = document.getElementById("registrar")
+btn.addEventListener("click", ()=>{
+    registrarse ()
+
+})
+
+
+
+/* 
+
 let nuevoUsuario=[]
 let nomUsuario=""
 let passUsuario=""
@@ -23,26 +90,30 @@ let userEmail=""
         e.preventDefault()
         let cuidado=""
         let entrar = false
-        let regexEmail=/^w+ ([.-]?w+)*@w+ ([.-]?w+)* (.w {2,3,4})+$/
-        if (usernameLogin.lenght <6){
-            cuidado +=`El nombre de usuario tiene que tener 6 caracterecteres como minimo. <br>`
-            entrar= true
-        }
-        if(!regexEmail.test(userEmailLogin)){
-            cuidado +=`El mail no es valido. <br>` 
-            entrar= true
-        }
-        if (passwordLogin != repetirpasswordLogin ){
-            cuidado += `Contraseña incorrecta`
-            entrar= true
-        }
-        if (entrar){
-            cuidado.innerHTML = cuidado
-        }
+        console.log(nuevo) */
+     /*    let regexEmail=/^w+ ([.-]?w+)*@w+ ([.-]?w+)* (.w {2,3,4})+$/ 
+      if (usernameLogin.lenght <6){
+          Swal.fire('El nombre de usuario tiene que tener 6 caracterecteres como minimo.')
+         /*  cuidado +=`El nombre de usuario tiene que tener 6 caracterecteres como minimo. <br>` 
+          entrar= true
+      }
+  /*     if(!regexEmail.test(userEmailLogin)){
+          Swal.fire('El mail no es valido.')
+        /*   cuidado +=`El mail no es valido. <br>`  
+          entrar= true
+      } 
+      if (passwordLogin != repetirpasswordLogin ){
+       /*    Swal.fire('Contraseña incorrecta') 
+         /*  cuidado += `Contraseña incorrecta` 
+          entrar= true
+      }
+      if (entrar){
+          cuidado.innerHTML = cuidado
+      }
 
     })
     
-
+ 
 
 
 /*     if (nuevo.nomUsuario == ""){
@@ -120,3 +191,68 @@ function validacion(){
     return false;
 }
 } */
+
+
+
+/* 
+----------------------------------------------------------
+let nuevoUsuario=[]
+let nomUsuario=""
+let passUsuario=""
+let repetirpassUsuario=""
+let userEmail=""
+
+
+
+function registrarse (){
+   // e.preventDefault()
+    let nuevo = {
+        usernameLogin : document.getElementById ("usernameLogin").value,
+        passwordLogin : document.getElementById ("passwordLogin").value,
+        repetirpasswordLogin : document.getElementById ("repetirpasswordLogin").value,
+        userEmailLogin : document.getElementById ("userEmailLogin").value
+    }
+
+    if (nuevo.nomUsuario == ""){
+        alert("Nombre de usuario requerido.");
+        return ;
+    }
+    else if (nuevo.userEmail == ""){
+        alert("Mail requerido.");
+        return ;
+    }
+    else if (nuevo.passUsuario == ""){
+        alert("Password requerido.");
+        return ;
+    }
+    else if (nuevo.repetirpassUsuario == ""){
+        alert("Password requerido.");
+        return ;
+    }
+    else if ( nuevo.passUsuario != nuevo.repetirpassUsuario ){
+        alert("La clave no coincide");
+        return;
+    }
+    else {
+    let nuevoUsuario= JSON.parse(localStorage.getItem('usuarios'));
+    nuevoUsuario.push(nuevo)
+    localStorage.setItem('usuarios',  JSON.stringify( nuevoUsuario))
+
+        alert(nomUsuario + "  Registro completo, Ya puede ingresar");
+
+        document.getElementById ("usernameLogin").value="";
+        document.getElementById ("passwordLogin").value="";
+        document.getElementById ("repetirpasswordLogin").value="";
+        document.getElementById ("userEmailLogin").value="";
+    } 
+    window.location.href='principal.html'
+}
+
+
+let encontrado = false
+let i = 0
+
+const btn = document.getElementById("registrar")
+btn.addEventListener("click", ()=>{
+    registrarse ()
+}) */
