@@ -279,11 +279,11 @@ text-align: left; }
     flex-wrap: wrap;
     width: 23%;
     max-width: 150px; }
-    .marca-main div:hover {
+   /*  .marca-main div:hover {
       width: 100%;
       border-radius: 50%;
       box-shadow: 5px 5px 20px black;
-      transform: translateY(-3%); }
+      transform: translateY(-3%); } */
     .marca-main img {
       width: 100%;
       border-radius: 50%;
@@ -547,4 +547,13 @@ p {
 
 .productoFinal{
   margin: auto;
+}
+
+
+.cuidado{
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  color: #b06ab3;
+  padding-top: 20px;
 }

@@ -33,27 +33,24 @@ reservar.addEventListener('click', () => {
         confirmButtonText: 'Si, quiero pagar!'
         }).then((result) => {
         if (result.isConfirmed) {
-            precioTotal.innerText =`0`
-            localStorage.setItem('carrito',  JSON.stringify([]))
             Swal.fire(
             'Ponte en contacto para retirar tus productos',
             'Te esperamos',
             'success',
             )
+            precioTotal.innerText =`0`
+            localStorage.setItem('carrito',  JSON.stringify([]))
         }
+        Swal.fire(
+            'Vuelve a la pagina principal',
+            'Pronto te llegara un E-mail',
+            'info',
+        )
     })
-    Swal.fire(
-        'The Internet?',
-        'That thing is still around?',
-        window.location.href='principal.html',
-        'question'
-      )
+
         })
-/*         alert("esperar")
-        window.location.href='principal.html' */
 
-//pasa muy rapido no logro ver el mensaje
-
-/* Swal.fire('Felicitaciones')
-window.location.href='principal.html' */
-
+    regreso = document.getElementById("regreso")
+    regreso.addEventListener('click', () => {
+        window.location.href='principal.html'
+    })

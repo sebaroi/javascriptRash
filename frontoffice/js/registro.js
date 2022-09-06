@@ -4,11 +4,11 @@ let nomUsuario=""
 let passUsuario=""
 let repetirpassUsuario=""
 let userEmail=""
+    let formRegistro=""
 
 
 
-function registrarse (){
-   // e.preventDefault()
+
     let nuevo = {
         usernameLogin : document.getElementById ("usernameLogin").value,
         passwordLogin : document.getElementById ("passwordLogin").value,
@@ -16,7 +16,36 @@ function registrarse (){
         userEmailLogin : document.getElementById ("userEmailLogin").value
     }
 
-    if (nuevo.nomUsuario == ""){
+
+    cuidado = document.getElementById("cuidado")
+    formRegistro = document.getElementById("formRegistro")
+    formRegistro.addEventListener("submit", (e) => {
+        e.preventDefault()
+        let cuidado=""
+        let entrar = false
+        let regexEmail=/^w+ ([.-]?w+)*@w+ ([.-]?w+)* (.w {2,3,4})+$/
+        if (usernameLogin.lenght <6){
+            cuidado +=`El nombre de usuario tiene que tener 6 caracterecteres como minimo. <br>`
+            entrar= true
+        }
+        if(!regexEmail.test(userEmailLogin)){
+            cuidado +=`El mail no es valido. <br>` 
+            entrar= true
+        }
+        if (passwordLogin != repetirpasswordLogin ){
+            cuidado += `Contraseña incorrecta`
+            entrar= true
+        }
+        if (entrar){
+            cuidado.innerHTML = cuidado
+        }
+
+    })
+    
+
+
+
+/*     if (nuevo.nomUsuario == ""){
         Swal.fire('Nombre de usuario requerido.')
         return ;
     }
@@ -49,7 +78,7 @@ function registrarse (){
         document.getElementById ("repetirpasswordLogin").value="";
         document.getElementById ("userEmailLogin").value="";
     } 
-    window.location.href='principal.html'
+    window.location.href="../principal.html"
 }
 
 
@@ -61,3 +90,33 @@ btn.addEventListener("click", ()=>{
     registrarse ()
 })
 
+
+ */
+
+
+
+
+/* 
+function validacion(){
+
+    if( nuevo.nomUsuario == null || /^\s+$/.test(nuevo.nomUsuario) ) {
+        Swal.fire('Nombre de usuario requerido.')
+        return false;
+
+}else if( !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(nuevo.userEmailLogin)) ) {
+    Swal.fire('Mail incorrecto.')
+    return false;
+
+}else if( nuevo.passwordLogin == null || /^\s+$/.test(nuevo.passwordLogin) ) {
+    Swal.fire('Nombre de usuario requerido.')
+    return false;
+
+} else if( nuevo.repetirpasswordLogin == null || /^\s+$/.test(nuevo.repetirpasswordLogin) ) {
+    Swal.fire('Nombre de usuario requerido.')
+    return false;
+
+}else if (nuevo.passwordLogin != nuevo.repetirpasswordLogin){
+    Swal.fire('las contraseñas no coinciden.')
+    return false;
+}
+} */

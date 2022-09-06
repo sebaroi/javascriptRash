@@ -6,11 +6,9 @@ let estoyLogueado = sessionStorage.getItem('usuarioLog')
 if (estoyLogueado){
     ingresar.style.display = 'none';
     logout.style.display = 'block';
-/*     document.getElementById("botonCarrito").style.display = 'block' */
 } else {
     ingresar.style.display = 'block';
     logout.style.display = 'none';
-/*     document.getElementById("botonCarrito").style.display = 'none' */
 }
 
 /* -------------------------------para el logout------------------- */
@@ -19,14 +17,12 @@ logout.addEventListener("click",()=>{
     localStorage.removeItem('carrito')
     localStorage.setItem('carrito',  JSON.stringify([]))
     location.reload()
-})
-
+    })
 })
 
 
 
 /* -------------------------------para el login------------------- */
-
 let nomUsuario = ""
 let passUsuario =""
 let repetirpassUsuario =""
@@ -35,7 +31,6 @@ let userEmail =""
 
 if(localStorage.getItem('usuarios') == null || localStorage.getItem('usuarios') == 'null')
     localStorage.setItem('usuarios',  JSON.stringify(usuarios))
-
 
     const btn = document.getElementById("botonIngresar")
     btn.addEventListener("click", ()=>{
@@ -85,17 +80,14 @@ if (encontrado){
 }
 
 
-
 /* /* /* /* -------------------------------para el registro------------------- */
 
-
 botonRegistro ()
-
 
 function botonRegistro(){
     const btn = document.getElementById("botonRegistrarse")
     btn.addEventListener("click", ()=>{
-        window.location.href="../frontoffice/registro.html"
+        window.location.href="../frontoffice/pages/registro.html"
         registrarse()
     })
 }
@@ -113,7 +105,6 @@ if (logueado){
             icon: 'error',
             title: 'Tenes que estar logueado para poder finalizar la compra.',
             text: 'Logueate es rapidisimo!!!',
-
-          })
+        })
     }
 })

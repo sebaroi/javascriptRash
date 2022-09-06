@@ -1,5 +1,4 @@
 
-
 const usuarios = [
     {usernameLogin: "admin", passwordLogin: "admin", userEmailLogin:"admin@gmail.com" },
     {usernameLogin: "test", passwordLogin: "clavetest123",userEmailLogin:"test@hotmail.com" },
@@ -149,7 +148,6 @@ const eliminarDelCarrito = (prodId) => {
     }).then((result) => {
         if (result.isConfirmed) {
             let newcar= JSON.parse(localStorage.getItem('carrito'));
-            //  localStorage.setItem('carrito',  JSON.stringify(newcar))
             const item = newcar.find((producto) => producto.sku === prodId)
             const indice = newcar.indexOf(item) 
             newcar.splice(indice, 1) 
@@ -165,25 +163,6 @@ const eliminarDelCarrito = (prodId) => {
     })
 }
 
-
-/* -----------BUSCAR productos--------- */
-/* paraBuscar = document.getElementById("paraBuscar").value;
-
-productos.find((productos.nombreProdu) =>{
-
-})
- */
-/* finalizarCompra.addEventListener('click', () => {
-if (usernameLogin===""){
-    alert("Usted necesita estar logueado")
-}
-
-    window.location.href='finalizarCompra.html'
-/*     if (encontrado){
-        window.location.href='finalizarCompra.html'
-    }alert("necesita loguearse")
-    })
- */
 
 
 

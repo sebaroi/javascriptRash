@@ -7,7 +7,7 @@ const productos = [
   {sku: 6, categoria: "Mothers", nombreProdu: "Combo Actualizacion Pc Intel I5 10400 + 8gb + Mother H410", precio: 62488, descripcion: "combo pc", stock: 7, posicion: "primero", imagen:"https://http2.mlstatic.com/D_NQ_NP_668651-MLA48394675585_112021-O.webp" },
   {sku: 7, categoria: "Mothers", nombreProdu: "Motherboard B450 Aorus Pro Wifi Am4 Amd 3ra Gen Ryzen", precio: 45999, descripcion: "Mother para pc", stock: 4, posicion: "primero", imagen:"https://http2.mlstatic.com/D_NQ_NP_838061-MLA43272931777_082020-O.webp" },
   {sku: 8, categoria: "Notebook", nombreProdu: "Notebook Lenovo Ideapad 3 14iil05 | 8GB | SSD 128 GB", precio: 88369, descripcion: "Notebook super elegante", stock: 4, posicion: "primero", imagen:"https://http2.mlstatic.com/D_NQ_NP_975834-MLA51015201380_082022-O.webp" },
-  {sku: 9, categoria: "Monitor", nombreProdu: "Monitor gamer curvo Samsung F390 Series C24F390FH led 24 ", precio: 88365, descripcion: "Notebook super elegante", stock: 4, posicion: "primero", imagen:"https://http2.mlstatic.com/D_NQ_NP_975834-MLA51015201380_082022-O.webp" },
+  {sku: 9, categoria: "Monitor", nombreProdu: "Monitor gamer curvo Samsung F390 Series C24F390FH led 24 ", precio: 88365, descripcion: "Notebook super elegante", stock: 4, posicion: "primero", imagen:"https://th.bing.com/th/id/OIP.NqyOwwdUhU7fsed6Ga0YfAHaGk?pid=ImgDet&rs=1" },
   {sku: 10, categoria: "Monitor", nombreProdu: "Monitor gamer Asus Eye Care VA27EHE led 27 ", precio: 58.999, descripcion: "El monior para vos", stock: 4, posicion: "primero", imagen:"https://http2.mlstatic.com/D_NQ_NP_665931-MLA45212708615_032021-O.webp" },
   {sku: 11, categoria: "sillaGamer", nombreProdu: "Silla gamer GCAMRN1 gamer ergonómica negra y roja", precio: 42333, descripcion: "Silla gamer super argonomica", stock: 4, posicion: "primero", imagen:"https://http2.mlstatic.com/D_NQ_NP_956059-MLA49010062832_022022-O.webp" },
   {sku: 12, categoria: "sillaGamer", nombreProdu: "Silla gamer pro basic negra y blanca", precio: 44525, descripcion: "Silla gamer super argonomica", stock: 4, posicion: "primero", imagen:"https://http2.mlstatic.com/D_NQ_NP_893396-MLA45978328032_052021-O.webp" },   
@@ -117,3 +117,12 @@ Swal.fire({
     }
   })
 }
+
+/* -------------------------------para el logout------------------- */
+logout.addEventListener("click",()=>{
+  sessionStorage.removeItem('usuarioLog')
+  localStorage.removeItem('carrito')
+  localStorage.setItem('carrito',  JSON.stringify([]))
+  window.location.href="../../frontoffice/principal.html"
+  })
+
