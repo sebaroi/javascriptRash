@@ -52,5 +52,5 @@ reservar.addEventListener('click', () => {
 
     regreso = document.getElementById("regreso")
     regreso.addEventListener('click', () => {
-        window.location.href='principal.html'
+        window.location.href="../../frontoffice/principal.html"
     })

@@ -99,7 +99,7 @@ let finalizar =document.getElementById("finalizarCompra")
 finalizar.addEventListener('click', () => {
     let logueado = sessionStorage.getItem('usuarioLog')
 if (logueado){
-    window.location.href='finalizarCompra.html'
+    window.location.href="../frontoffice/pages/finalizarCompra.html"
     } else {
         Swal.fire({
             icon: 'error',
