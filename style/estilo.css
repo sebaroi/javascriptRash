@@ -330,7 +330,6 @@ text-align: left; }
   height: 100%;
     opacity: 1;
     visibility: visible;
-       /*  background: rgba(0, 0, 0, 0.4); */
 }
 
 .modal-carrito {
@@ -490,15 +489,6 @@ p {
 }
 
 
-/*  ------modal ------- 
-.modal-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-} */
-
 
 
 #botonLog{
@@ -531,13 +521,34 @@ p {
   
 }
 
-.fa-user{
+/* .fa-user{
   margin-left: auto;
  display: block;
-}
+} */
 
 .alinear{
     margin-left: auto;
  display: block;
  
 }
+
+
+.iconosAgrupados{
+  margin-left: auto;
+  display: block;
+}
+
+/* //------baner ofertas----- */
+.banner{
+  height: 200px;
+  width: 70%;
+}
+
+.banner img{
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+}
+
+
